@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Chocolate+Classical+Sans&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&family=Reddit+Mono:wght@200..900&family=Roboto+Slab:wght@100..900&family=Sevillana&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+NG+Modern:wght@100..400&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=Gotu&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Gotu&display=swap");
+
+html,
+body {
+  scrollbar-width: thin;
+}
+
+* {
+  /* font-family: "Roboto", sans-serif; */
+  /* font-family: "Montserrat", sans-serif; */
+  font-family: "Poppins", system-ui;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.mainPrimary {
+  font-family: "Anton", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+body {
+  background: #f7f4f4 !important;
+}
+
+.dancinglogo {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+.ant-modal-content {
+  padding: 0 !important;
+}
+ul.list_style.circle {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+ul.list_style.circle li,
+p {
+  margin-bottom: 10px;
+}
+p {
+  text-align: justify;
+  font-size: 18px;
+  color: #444;
+}
+h2,
+h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  color: black;
+}
+
+.ant-image-mask {
+  border-radius: 10px;
+}
+.WidgetTitle__Header-sc-ruy1gu-2.huflDf {
+  display: none;
+}
+
+.clip-path-default {
+  clip-path: polygon(150% -6%, 0 100%, 100% 100%, 100% 100%);
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.group:hover .clip-path-default {
+  clip-path: none; /* Remove clip-path on hover */
+}
+.ant-image.css-dev-only-do-not-override-vn1oyg {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  box-shadow:  rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.ant-image.css-vn1oyg {
+  border: 2px solid #fff;
+  border-radius: 10px;
+  box-shadow:  rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.w-\[90\%\].md\:w-\[95\%\].lg\:w-\[94\%\].xl\:w-\[92\%\].m-0.ml-auto.py-3.lg\:py-20.xl\:py-24.relative div.ant-image.css-dev-only-do-not-override-vn1oyg {
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+}
+.w-\[90\%\].md\:w-\[95\%\].lg\:w-\[94\%\].xl\:w-\[92\%\].m-0.ml-auto.py-3.lg\:py-20.xl\:py-24.relative div.ant-image.css-vn1oyg {
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+}
+/* .dad.columns-1.gap-5.sm\:columns-2.sm\:gap-8.md\:columns-3.lg\:columns-4.\[\&\>img\:not\(\:first-child\)\]\:mt-8 div.mb-5 div.ant-image.css-dev-only-do-not-override-vn1oyg {  height: 210px !important;
+  overflow: hidden !important;
+  object-fit: cover !important;
+  width: 100% !important;
+}
+.dad.columns-1.gap-5.sm\:columns-2.sm\:gap-8.md\:columns-3.lg\:columns-4.\[\&\>img\:not\(\:first-child\)\]\:mt-8 div.mb-5 div.img.ant-image-img.rounded-lg.css-dev-only-do-not-override-vn1oyg {
+  height: 210px !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  width: 100% !important;
+}
+.dad.columns-1.gap-5.sm\:columns-2.sm\:gap-8.md\:columns-3.lg\:columns-4.\[\&\>img\:not\(\:first-child\)\]\:mt-8 div.mb-5 div.ant-image.css-vn1oyg {
+  height: 210px !important;
+  overflow: hidden !important;
+  object-fit: cover !important;
+  width: 100% !important;
+}
+.dad.columns-1.gap-5.sm\:columns-2.sm\:gap-8.md\:columns-3.lg\:columns-4.\[\&\>img\:not\(\:first-child\)\]\:mt-8 div.mb-5 div.img.ant-image-img.rounded-lg.css-vn1oyg {
+  height: 210px !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  width: 100% !important;
+}
+
+.dad.columns-1.gap-5.sm\:columns-2.sm\:gap-8.md\:columns-3.lg\:columns-4.\[\&\>img\:not\(\:first-child\)\]\:mt-8 div.mb-5 div.ant-image.css-vn1oyg img.ant-image-img.rounded-lg.css-vn1oyg {
+  height: 210px !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+} */
+
+.katVDP {
+  font-size: 16px;
+  color: #232c77 !important;
+}
+.Background__Base-sc-4lq1r6-1.jZZVZW {
+  background: unset !important;
+}
+@media only screen and (max-width: 767px) {
+  :where(.css-vn1oyg).ant-tabs-centered >.ant-tabs-nav .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']), :where(.css-vn1oyg).ant-tabs-centered >div>.ant-tabs-nav .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']){
+      justify-content: unset !important;
+  }
+
+  :where(.css-dev-only-do-not-override-vn1oyg).ant-tabs-centered >.ant-tabs-nav .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']), :where(.css-dev-only-do-not-override-vn1oyg).ant-tabs-centered >div>.ant-tabs-nav .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']){
+    justify-content: unset !important;
+  }
+}
+
+
+.BulletsControl__BulletsControlItem-sc-vxd05w-2.bZMJWw {
+  background: white !important;
+}
+
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: white !important;
+}
+
+span.swiper-pagination-bullet {
+  background: white !important;
+}

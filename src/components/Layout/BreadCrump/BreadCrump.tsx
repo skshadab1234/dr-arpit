@@ -1,6 +1,7 @@
+'use client'
+import { useEffect, useState } from "react";
 import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
-import React from "react";
 import bread from "@/assets/images/breadcrump/2.jpg";
 
 interface BreadCrumbProps {
@@ -16,6 +17,28 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({
   img,
   version = false, // Default value set to false
 }) => {
+  const [backgroundPosition, setBackgroundPosition] = useState("top center");
+
+  useEffect(() => {
+    // Run only on the client side
+    if (typeof window !== "undefined") {
+      const handleResize = () => {
+        setBackgroundPosition(
+          window.innerWidth < 640 ? "70% center" : "top center"
+        );
+      };
+
+      // Set the initial background position
+      handleResize();
+
+      // Add resize event listener
+      window.addEventListener("resize", handleResize);
+
+      // Cleanup the event listener on component unmount
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []);
+
   return (
     <div
       className={`relative bg-bottom h-auto py-16 sm:py-24 object-cover ${
@@ -28,7 +51,7 @@ const BreadCrumb: React.FC<BreadCrumbProps> = ({
               backgroundImage: `url(${bread.src})`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
-              backgroundPosition: "top center",
+              backgroundPosition, // Apply the responsive background position here
             }
       }
     >

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, MapPin, PhoneCall, MailIcon } from "lucide-react";
-import logo from "@/assets/images/logo.png";
+import logo from "@/assets/arpitlogo.png";
 
 interface Treatment {
   id: number;
@@ -43,9 +43,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 xl:grid-cols-3">
           {/* About Section */}
           <div>
-          <span className="mainPrimary uppercase text-3xl md:text-3xl xl:text-4xl font-bold text-transparent bg-clip-text bg-[#232c77] ">
-            Dr. Arpit Bansal
-          </span>
+            <img className="w-60 mb-2" src={logo.src} alt="Dr Arpit Bansal" />
 
             <p className="mt-5 text-base font-medium text-justify">
               Dr. Arpit Bansal, an Advanced Laparoscopy and Cancer Surgeon, has
@@ -159,7 +157,10 @@ const Footer = () => {
                     <MapPin size={20} color="#00008b" />
                   </div>
                   <h6 className="text-justify">
-                    <a target="_blank" href="https://www.google.com/maps?sca_esv=9783522cabc36d5f&sxsrf=ADLYWIIq8DgeJ3WC8yuIto4Ny0mNMvFSoA:1726059590343&lsig=AB86z5W8LVVMCDKPemXbeL-hE1XF&shndl=-1&shem=lsde,vslcca&kgs=5f63309b8c4d9278&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KU2KAgEwNYU5MeWlbyLiD6NC&daddr=ROOM+NO+23,+JEEVAN+JYOTI+HOSPITAL+CAMPUS,+162,+Himmat+Ganj,+Bai+Ka+Bagh,+Prayagraj,+Uttar+Pradesh+211003">
+                    <a
+                      target="_blank"
+                      href="https://www.google.com/maps?sca_esv=9783522cabc36d5f&sxsrf=ADLYWIIq8DgeJ3WC8yuIto4Ny0mNMvFSoA:1726059590343&lsig=AB86z5W8LVVMCDKPemXbeL-hE1XF&shndl=-1&shem=lsde,vslcca&kgs=5f63309b8c4d9278&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KU2KAgEwNYU5MeWlbyLiD6NC&daddr=ROOM+NO+23,+JEEVAN+JYOTI+HOSPITAL+CAMPUS,+162,+Himmat+Ganj,+Bai+Ka+Bagh,+Prayagraj,+Uttar+Pradesh+211003"
+                    >
                       {" "}
                       Jeevan Jyoti Hospital, 162 Bai Ka Bagh, Prayagraj 211003,
                       India.{" "}

@@ -17,7 +17,10 @@ interface SpecialityProps {
   title: string;
 }
 
-const Speciality: React.FC<SpecialityProps> = ({ title }) => {
+const Speciality: React.FC<SpecialityProps> = ({
+  title,
+  // TreatmentData,
+}: any) => {
   const [treatment, setTreatment] = useState<Treatment | null>(null);
   const [loading, setLoading] = useState(true);
   const bg = "/white-bg.png"; // Updated path to be more consistent
@@ -30,6 +33,7 @@ const Speciality: React.FC<SpecialityProps> = ({ title }) => {
         );
         const data = await response.json();
         setTreatment(data);
+        // TreatmentData(data);
       } catch (error) {
         console.error("Error fetching treatment:", error);
       } finally {
@@ -94,7 +98,8 @@ const Speciality: React.FC<SpecialityProps> = ({ title }) => {
             alt={decodeHtmlEntities(treatment.title)}
             className="w-full object-cover border-2 border-solid border-[#fff] rounded-md"
             style={{
-              boxShadow: 'rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px'
+              boxShadow:
+                "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
             }}
           />
         </div>

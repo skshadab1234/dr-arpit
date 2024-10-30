@@ -95,26 +95,26 @@ const SpecialityComp: React.FC = () => {
                     {/* White Overlay */}
                     <div className="absolute inset-0  opacity-30 bg-black  group-hover:bg-[#232c77] group-hover:opacity-30 transition-opacity duration-300"></div>
                   </div>
-                </Link>
-                <h3
-                  className=" group-hover:font-bold  md:text-2xl text-[#fff] z-50 
-                      text-center uppercase text-base m-0 w-full flex items-end px-3
-                   
+                  <h3
+                    className="hover:text-[#ded7d7] group-hover:font-bold  md:text-2xl text-[#fff] z-50 
+                  text-center uppercase text-base m-0 w-full flex items-end px-3
+                  
                       group-hover:items- justify-center pb-4 pt-4  
                       group-hover:text-[#232c77] font-bold"
-                  // style={{
-                  //   clipPath:
-                  //     "polygon(114% -6%, 0 100%, 100% 100%, 100% 100%)",
-                  // }}
-                >
-                  {/* {item.title.split(" ").map((word, index) => (
+                    // style={{
+                    //   clipPath:
+                    //     "polygon(114% -6%, 0 100%, 100% 100%, 100% 100%)",
+                    // }}
+                  >
+                    {/* {item.title.split(" ").map((word, index) => (
                         <React.Fragment key={index}>
                           {word}
                           {index === 0 && <br />}
-                        </React.Fragment>
-                      ))} */}
-                  {item.title}
-                </h3>
+                          </React.Fragment>
+                          ))} */}
+                    {item.title}
+                  </h3>
+                </Link>
               </div>
             ))
           ) : (
@@ -125,6 +125,5 @@ const SpecialityComp: React.FC = () => {
     </>
   );
 };
-
 
 export default SpecialityComp;

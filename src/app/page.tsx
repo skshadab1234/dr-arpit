@@ -14,14 +14,51 @@ import InstaFeed from "@/components/InstagramFeed/InstaFeed";
 import FloatingAppointment from "@/components/Layout/FloatingAppointment";
 import Treatments from "@/components/Treatments/Treatments";
 import { Metadata } from "next";
+import metaImage from "@/assets/arpit.jpg";
 
 export const metadata: Metadata = {
   title: "Dr Arpit Bansal",
   description:
-    "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS Is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
+    "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS and FIBC is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
+  keywords: "MBBS | MS | FACS | FMAS | FCS | FIBC",
+
+  // SEO meta tags
+  authors: [{ name: "Dr. Arpit Bansal", url: "https://drarpitbansal.in" }],
+  robots: "index, follow", // To allow search engine crawling and indexing
+  publisher: "Dr. Arpit Bansal",
+
+  // Canonical URL (change it to your actual URL)
+  alternates: {
+    canonical: "https://drarpitbansal.in",
+  },
+
+  // Open Graph meta tags
+  openGraph: {
+    type: "website",
+    url: "https://drarpitbansal.in",
+    title: "Dr. Arpit Bansal",
+    description:
+      "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS and FIBC is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
+    images: [
+      {
+        url: metaImage.src,
+        alt: "Dr. Arpit Bansal - Laparoscopic & Onco Surgeon",
+      },
+    ],
+  },
+
+  // Twitter Card meta tags
+  twitter: {
+    card: "summary_large_image",
+    site: "@DrArpitBansal",
+    title: "Dr. Arpit Bansal",
+    description:
+      "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS and FIBC is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
+    images: [metaImage.src],
+  },
 };
 export default function Home() {
-   console.log(process.env.BACKEND, "fdsfdsfdsf");
+  // console.log(process.env.BACKEND, "fdsfdsfdsf");
   return (
     <>
       <Slider />
@@ -37,4 +74,3 @@ export default function Home() {
     </>
   );
 }
-

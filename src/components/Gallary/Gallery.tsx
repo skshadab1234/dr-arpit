@@ -91,7 +91,7 @@ const Gallery = () => {
                     width={"100%"}
                     height={"300px"}
                     src={item.img.src}
-                    alt=""
+                    alt={item.img.src}
                   />
                   <h4 className="text-white text-xl font-semibold text-center py-2 absolute top-0 w-full h-full flex items-center justify-center rounded-lg bg-[#00000066]">
                     <IoPlayCircleSharp

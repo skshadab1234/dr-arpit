@@ -17,7 +17,6 @@ import banner8 from "@/assets/images/8.jpg";
 import banner9 from "@/assets/images/9.jpg";
 import banner10 from "@/assets/images/10.jpg";
 
-
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import Link from "next/link";
@@ -25,7 +24,7 @@ import Link from "next/link";
 const slidesData = [
   {
     url: "/about",
-    description: "",
+    description: "Banner 1",
     backgroundImage: banner1.src,
   },
   {
@@ -48,13 +47,20 @@ const slidesData = [
     description: "",
     backgroundImage: banner4.src,
   },
-  { url: "/bringing-people-together", description: "", backgroundImage: banner5.src },
+  {
+    url: "/bringing-people-together",
+    description: "",
+    backgroundImage: banner5.src,
+  },
   { url: "/in-news", description: "", backgroundImage: banner6.src },
   { url: "/book-appointment", description: "", backgroundImage: banner7.src },
-  { url: "/where-passion-meets-recognition", description: "", backgroundImage: banner8.src },
+  {
+    url: "/where-passion-meets-recognition",
+    description: "",
+    backgroundImage: banner8.src,
+  },
   { url: "/gallery", description: "", backgroundImage: banner9.src },
 ];
-
 
 const Slider: React.FC = () => {
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -90,7 +96,7 @@ const Slider: React.FC = () => {
                 ref={(el: any) => (slideRefs.current[index] = el)}
                 className="relative w-full h-auto flex items-center justify-left banner-animate"
               >
-                <img src={slide.backgroundImage} alt="" />
+                <img src={slide.backgroundImage} alt={slide.backgroundImage} />
                 {/* Overlay parts */}
                 <div className="overlay-top-part overlay-part"></div>
                 <div className="overlay-bottom-part overlay-part"></div>

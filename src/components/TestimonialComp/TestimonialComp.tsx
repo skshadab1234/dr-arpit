@@ -75,7 +75,7 @@ const TestimonialComp = () => {
                     width={"100%"}
                     height={"300px"}
                     src={items.meta.image}
-                    alt=""
+                    alt={items.meta.url}
                   />
                   <h4 className="text-white cursor-pointer text-xl font-semibold text-center py-2 absolute top-0 w-full h-full flex items-center justify-center bg-[#00000066]">
                     <IoPlayCircleSharp

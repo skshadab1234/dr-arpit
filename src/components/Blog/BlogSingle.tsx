@@ -26,7 +26,7 @@ const BlogSingleSkeleton = () => (
   </div>
 );
 
-const BlogSingle = ({ params }: any) => {
+const BlogSingle = ({ params, BlogData }: any) => {
   const bg = "./white bg.png";
   const [blog, setBlog] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -44,12 +44,11 @@ const BlogSingle = ({ params }: any) => {
   };
 
   useEffect(() => {
-    fetch(
-      `${process.env.BACKEND}/disease/${params}`
-    )
+    fetch(`${process.env.BACKEND}/disease/${params}`)
       .then((response) => response.json())
       .then((data) => {
         setBlog(data);
+        BlogData(data);
         setLoading(false);
       })
       .catch((error) => {

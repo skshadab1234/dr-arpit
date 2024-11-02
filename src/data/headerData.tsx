@@ -87,12 +87,12 @@ const videoData = [
   {
     id: 3,
     img: image3,
-    video: 'https://drarpitbck.demo-web.live/wp-content/uploads/2024/10/3.mp4',
+    video: 'https://backend.drarpitbansal.in/wp-content/uploads/2024/10/3.mp4',
   },
   {
     id: 4,
     img: image4,
-    video: 'https://drarpitbck.demo-web.live/wp-content/uploads/2024/10/4.mp4',
+    video: 'https://backend.drarpitbansal.in/wp-content/uploads/2024/10/4.mp4',
   },
   
 ]

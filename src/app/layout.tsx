@@ -59,12 +59,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Announcement />
+        {/* <Announcement />
         <NewHeader />
         {children}
         <FloatingAppointment />
         <FloatingButton />
-        <Footer />
+        <Footer /> */}
       </body>
     </html>
   );

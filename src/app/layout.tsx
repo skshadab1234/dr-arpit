@@ -64,7 +64,7 @@ export default function RootLayout({
         {children}
         <FloatingAppointment />
         <FloatingButton />
-        <Footer /> 
+        <Footer />
       </body>
     </html>
   );

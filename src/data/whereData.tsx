@@ -1,10 +1,10 @@
-import where1 from "@/assets/images/where/1.jpeg";
-import where2 from "@/assets/images/where/2.jpeg";
+import where1 from "@/assets/images/where/1.jpg";
+import where2 from "@/assets/images/where/2.jpg";
 import where3 from "@/assets/images/where/3.jpg";
-import where4 from "@/assets/images/where/4.jpeg";
+import where4 from "@/assets/images/where/4.jpg";
 import where5 from "@/assets/images/where/5.jpg";
 import where6 from "@/assets/images/where/6.jpg";
-import where7 from "@/assets/images/where/7.jpeg";
+import where7 from "@/assets/images/where/7.jpg";
 import where8 from "@/assets/images/where/8.jpeg";
 
 // import where7 from "@/assets/images/where/7.jpg";

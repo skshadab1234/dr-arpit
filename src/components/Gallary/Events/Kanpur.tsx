@@ -19,7 +19,7 @@ interface PortfolioData {
 const Kanpur = () => {
   return (
     <>
-      <p className="text-center mb-5 text-2xl">Talk on hyderation and longevity (August 2024)</p>
+      <p className="text-center mb-5 text-2xl">Talk on Hydration and Longevity, August 2024</p>
       <div className="dad columns-1 gap-5 sm:columns-2  md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
         {KanpurDatas.map((item: PortfolioData) => (
           <div key={item.id} className="mb-3">

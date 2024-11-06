@@ -118,7 +118,7 @@ const SpecialityComp: React.FC = () => {
               </div>
             ))
           ) : (
-            <p>No treatments available.</p> // Show a message if no treatments are available
+            <p></p> // Show a message if no treatments are available
           )}
         </div>
       </div>

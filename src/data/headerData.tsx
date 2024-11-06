@@ -2,7 +2,7 @@ import logo from "@/assets/images/logo.png";
 import image1 from "@/assets/images/video/1.jpeg"
 import image2 from "@/assets/images/video/2.jpeg"
 import image3 from "@/assets/images/video/3.jpeg"
-import image4 from "@/assets/images/video/4.jpeg"
+import image4 from "@/assets/images/video/4.jpg"
 
 
 

@@ -19,7 +19,9 @@ interface PortfolioData {
 const Lala = () => {
   return (
     <>
-      <p className="text-center mb-5 text-2xl">Talk on cervical cancer awareness  (September 2024)</p>
+      <p className="text-center mb-5 text-2xl">
+        Talk on Cervical Cancer, Awareness, September 2024
+      </p>
       <div className="dad columns-1 gap-5 sm:columns-2  md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
         {LalaDatas.map((item: PortfolioData) => (
           <div key={item.id} className="mb-3">

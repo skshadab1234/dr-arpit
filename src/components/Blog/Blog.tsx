@@ -47,7 +47,7 @@ const BlogPostComponent = ({
             </a>
           </h3>
           <p
-            className="text-gray-700 mb-4 line-clamp-3"
+            className="text-gray-700 mb-4 line-clamp-3 text-left"
             dangerouslySetInnerHTML={{ __html: post.description }}
           ></p>
           <a

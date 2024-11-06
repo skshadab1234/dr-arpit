@@ -20,7 +20,7 @@ const Maharishi = () => {
   return (
     <>
      <p className="text-center mb-5 text-2xl">
-        Talk on cervical cancer, longevity, hyderation, ageing healthily  (August 2024)
+        Talk on Cervical Cancer, Longevity and Hydration, Ageing Healthily, August 2024
       </p>
       <div className="dad columns-1 gap-5 sm:columns-2  md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
         {MaharishiDatas.map((item: PortfolioData) => (

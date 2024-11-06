@@ -41,5 +41,4 @@ const Kanpur = () => {
   );
 };
 
-
 export default Kanpur;

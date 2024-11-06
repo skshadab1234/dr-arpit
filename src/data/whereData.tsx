@@ -5,7 +5,7 @@ import where4 from "@/assets/images/where/4.jpg";
 import where5 from "@/assets/images/where/5.jpg";
 import where6 from "@/assets/images/where/6.jpg";
 import where7 from "@/assets/images/where/7.jpg";
-import where8 from "@/assets/images/where/8.jpeg";
+import where8 from "@/assets/images/where/8.jpg";
 
 // import where7 from "@/assets/images/where/7.jpg";
 // import where9 from "@/assets/images/where/9.jpg";

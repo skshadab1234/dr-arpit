@@ -74,7 +74,7 @@ const BlogSingle = ({ params, BlogData }: any) => {
       name="keywords"
       content={blog.meta_keyword || "default, keywords, here"}
     />
-    <link rel="canonical" href={`https://drarpitbansal.in/speciality/${blog.slug}`} />
+    <link rel="canonical" href={`https://drarpitbansal.in/patients-education/${blog.slug}`} />
 
   </head>
     <div

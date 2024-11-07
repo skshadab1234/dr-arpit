@@ -177,6 +177,17 @@ const Footer = () => {
                     drarpitbansal@gmail.com
                   </a>
                 </div>
+
+                <div className="md:w-full flex justify-center items-center">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14412.230957483418!2d81.8466334!3d25.4363331!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3985353001028a4d%3A0x42a30fe2226fa5e5!2sDr%20Arpit%20Bansal%20%7C%20Laproscopy%20Doctor%2Fhernia%20Doctor%2Flaser%20Piles%20Doctor%2FVaricose%20Vein%20Doctor%20In%20Prayagraj!5e0!3m2!1sen!2sin!4v1725442881878!5m2!1sen!2sin"
+                  width="100%"
+                  height="180"
+                  className="rounded-lg border-4 border-solid"
+                  style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
+                  loading="lazy"
+                ></iframe>
+              </div>
               </div>
             </div>
           </div>

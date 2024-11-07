@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
   // SEO meta tags
   authors: [
-    { name: "Dr. Arpit Bansal", url: "https://drarpitbansal.in/bringing-people-together" },
+    { name: "Dr. Arpit Bansal"},
   ],
   robots: "index, follow", // To allow search engine crawling and indexing
   publisher: "Dr. Arpit Bansal",

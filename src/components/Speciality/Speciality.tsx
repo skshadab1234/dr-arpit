@@ -82,6 +82,8 @@ const Speciality: React.FC<SpecialityProps> = ({
           name="keywords"
           content={treatment.meta_keyword || "default, keywords, here"}
         />
+        <link rel="canonical" href={`https://drarpitbansal.in/speciality/${title}`} />
+
       </head>
 
       <div

@@ -62,6 +62,21 @@ const BlogSingle = ({ params, BlogData }: any) => {
   }
 
   return (
+    <>  <head>
+    <title>{blog.meta_title || "Default Page Title"}</title>
+    <meta
+      name="description"
+      content={
+        blog.meta_description || "Default description for the page."
+      }
+    />
+    <meta
+      name="keywords"
+      content={blog.meta_keyword || "default, keywords, here"}
+    />
+    <link rel="canonical" href={`https://drarpitbansal.in/speciality/${blog.slug}`} />
+
+  </head>
     <div
       style={{
         backgroundImage: `url('${bg}')`,
@@ -128,6 +143,7 @@ const BlogSingle = ({ params, BlogData }: any) => {
         <BlogLatest params={params} />
       </div>
     </div>
+    </>
   );
 };
 

@@ -18,10 +18,7 @@ const PatientsEducationDetail = async ({ params }: any) => {
     description: blog.meta_description,
     keywords: blog.meta_keyword,
     authors: [
-      {
-        name: "Dr. Arpit Bansal",
-        url: `https://drarpitbansal.in/patients-education/${blog.slug}`,
-      },
+      { name: "Dr. Arpit Bansal"},
     ],
     robots: "index, follow",
     publisher: "Dr. Arpit Bansal",

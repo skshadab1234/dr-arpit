@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import whereDatas from "@/data/whereData";
-import { Image } from "antd";
+import Image from "next/image";
+import { IoClose, IoEye } from "react-icons/io5";
 
 interface StaticImageData {
   src: string;
@@ -12,12 +13,51 @@ interface StaticImageData {
 
 interface PortfolioData {
   id: number;
-  image: StaticImageData; // Use the StaticImageData type for images
+  image: StaticImageData;
   heading: string;
-  purl?: string; // Optional URL
+  purl?: string;
 }
+
 const Where = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<StaticImageData | null>(null);
   const bg = "./white bg.png";
+
+  const openModal = (image: StaticImageData) => {
+    setSelectedImage(image);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+    setSelectedImage(null);
+  };
+
+  const ImageItem = ({ item }: { item: PortfolioData }) => (
+    <div
+      key={item.id}
+      className="relative mb-3 cursor-pointer group"
+      onClick={() => openModal(item.image)}
+    >
+      <Image
+        src={item.image.src}
+        alt={item.heading}
+        width={400}
+        height={400}
+        style={{
+          boxShadow: "rgba(14, 30, 37, 0.12) 0px 2px 4px, rgba(14, 30, 37, 0.32) 0px 2px 16px",
+          border: "2px solid #fff",
+          borderRadius: "10px",
+        }}
+        className="rounded-lg"
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex gap-2 justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+        <IoEye className="text-white text-xl" />
+        <span className="text-white text-lg">Preview</span>
+      </div>
+    </div>
+  );
+
   return (
     <div
       style={{
@@ -26,32 +66,43 @@ const Where = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className={`container mx-auto px-4 py-16`}>
+      <div className="container mx-auto px-4 py-16">
         <h5
           style={{ letterSpacing: "3px" }}
           className="text-[#232c77] text-center pb-8 font-bold uppercase mainPrimary text-4xl lg:text-6xl"
         >
-            {/* Awards */}
           Where Passion Meets Recognition
         </h5>
-        <div className="dad columns-1 gap-5 sm:columns-2  md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
-          {whereDatas.map((item: PortfolioData) => (
-            <div key={item.id} className="mb-3">
-              {" "}
-              <Image.PreviewGroup>
-                <Image
-                  src={item.image.src} // Access the src from the image object
-                  alt={item.heading}
-                  className="rounded-lg"
-                  // layout="responsive"
-                  // width={item.image.width}
-                  // height={item.image.height}
-                />
-              </Image.PreviewGroup>
-            </div>
+
+        <div className="columns-1 gap-5 sm:columns-2 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
+          {whereDatas.map((item) => (
+            <ImageItem key={item.id} item={item} />
           ))}
         </div>
       </div>
+
+      {isOpen && selectedImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50"
+          onClick={closeModal}
+        >
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <button
+              onClick={closeModal}
+              className="absolute top-2 right-2 text-white bg-white p-2 rounded-full"
+            >
+              <IoClose className="text-gray-900" />
+            </button>
+            <Image
+              src={selectedImage.src}
+              alt="Selected Image"
+              width={400}
+              height={400}
+              className="rounded-lg px-3 w-[90%]"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

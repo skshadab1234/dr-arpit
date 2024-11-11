@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import KanpurDatas from "@/data/KanpurData";
 import Image from "next/image";
-import { IoClose } from "react-icons/io5";
+import { IoClose, IoEye } from "react-icons/io5";
 
 interface StaticImageData {
   src: string;
@@ -34,32 +34,40 @@ const Kanpur = () => {
     setSelectedImage(null);
   };
 
+  const ImageItem = ({ item }: { item: PortfolioData }) => (
+    <div
+      key={item.id}
+      className="relative mb-3 cursor-pointer group"
+      onClick={() => openModal(item.image)}
+    >
+      <Image
+        src={item.image.src}
+        alt={item.heading}
+        width={400}
+        height={400}
+        style={{
+          boxShadow:
+            "rgba(14, 30, 37, 0.12) 0px 2px 4px, rgba(14, 30, 37, 0.32) 0px 2px 16px",
+          border: "2px solid #fff",
+          borderRadius: "10px",
+        }}
+        className="rounded-lg mb-5"
+      />
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex gap-2 justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
+        <IoEye className="text-white text-lg" />
+        <span className="text-white text-base">Preview</span>
+      </div>
+    </div>
+  );
+
   return (
     <>
       <p className="text-center mb-5 text-2xl">
         Talk on Hydration and Longevity, August 2024
       </p>
       <div className="dad columns-1 gap-5 sm:columns-2 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
-        {KanpurDatas.map((item: PortfolioData) => (
-          <div
-            key={item.id}
-            className="mb-3 cursor-pointer"
-            onClick={() => openModal(item.image)}
-          >
-            <Image
-              style={{
-                boxShadow:
-                  "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
-                border: "2px solid #fff",
-                borderRadius: "10px",
-              }}
-              width={400}
-              height={400}
-              src={item.image.src}
-              alt={item.heading}
-              className="rounded-lg"
-            />
-          </div>
+        {KanpurDatas.map((item) => (
+          <ImageItem key={item.id} item={item} />
         ))}
       </div>
 
@@ -78,9 +86,9 @@ const Kanpur = () => {
             <Image
               src={selectedImage.src}
               alt="Selected Image"
-              width={selectedImage.width}
-              height={selectedImage.height}
-              className="rounded-lg"
+              width={400}
+              height={400}
+              className="rounded-lg px-3 w-[90%]"
             />
           </div>
         </div>

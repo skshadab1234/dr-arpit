@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -19,8 +20,8 @@ interface SpecialityProps {
 
 const Speciality: React.FC<SpecialityProps> = ({
   title,
-  // TreatmentData,
-}: any) => {
+}: // TreatmentData,
+any) => {
   const [treatment, setTreatment] = useState<Treatment | null>(null);
   const [loading, setLoading] = useState(true);
   const bg = "/white-bg.png"; // Updated path to be more consistent
@@ -82,8 +83,10 @@ const Speciality: React.FC<SpecialityProps> = ({
           name="keywords"
           content={treatment.meta_keyword || "default, keywords, here"}
         />
-        <link rel="canonical" href={`https://drarpitbansal.in/speciality/${title}`} />
-
+        <link
+          rel="canonical"
+          href={`https://drarpitbansal.in/speciality/${title}`}
+        />
       </head>
 
       <div
@@ -95,7 +98,9 @@ const Speciality: React.FC<SpecialityProps> = ({
         className="flex flex-col lg:flex-row items-start w-full gap-3 lg:gap-10 py-5 md:py-8 lg:py-14 bg-white"
       >
         <div className="w-full lg:w-[50%] px-6 md:px-16 animate-fade-in-left">
-          <img
+          <Image
+            width={300} // Set an initial width (can be any value) to be responsive
+            height={300}
             src={treatment.image}
             alt={decodeHtmlEntities(treatment.title)}
             className="w-full object-cover border-2 border-solid border-[#fff] rounded-md"

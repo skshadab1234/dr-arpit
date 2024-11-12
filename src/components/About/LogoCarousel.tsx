@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import logosDatas from "@/data/logoData";
 import "./LogoCarousel.css";
+import Image from "next/image";
 
 const LogoCarousel = () => {
   const bg = "./white bg.png";
@@ -56,7 +57,13 @@ const LogoCarousel = () => {
               key={item.id}
               className="single-client shadow-lg rounded-lg bg-[#fff] my-3"
             >
-              <img className="p-0" src={item.image.src} alt={item.heading} />
+              <Image
+                width={400}
+                height={400}
+                className="p-0"
+                src={item.image.src}
+                alt={item.heading}
+              />
             </div>
           ))}
         </Slider>

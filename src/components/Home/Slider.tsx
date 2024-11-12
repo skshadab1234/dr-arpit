@@ -20,6 +20,7 @@ import banner10 from "@/assets/images/10.jpg";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import Link from "next/link";
+import Image from "next/image";
 
 const slidesData = [
   {
@@ -96,7 +97,12 @@ const Slider: React.FC = () => {
                 ref={(el: any) => (slideRefs.current[index] = el)}
                 className="relative w-full h-auto flex items-center justify-left banner-animate"
               >
-                <img src={slide.backgroundImage} alt={slide.backgroundImage} />
+                <Image
+                  width={1600}
+                  height={1600}
+                  src={slide.backgroundImage}
+                  alt={slide.backgroundImage}
+                />
                 {/* Overlay parts */}
                 <div className="overlay-top-part overlay-part"></div>
                 <div className="overlay-bottom-part overlay-part"></div>

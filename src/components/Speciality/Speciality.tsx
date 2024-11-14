@@ -1,8 +1,8 @@
 "use client";
-
-import Image from "next/image";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import FAQ from "./FAQ";
+import Reviews from "./Reviews";
+import AboutArpit from "./AboutArpit";
 
 // Define a more specific type for the treatment data
 interface Treatment {
@@ -12,6 +12,9 @@ interface Treatment {
   image: string;
   title: string;
   description: string;
+  treatment_data: any;
+  treatment_faqs: any;
+  treatment_reviews: any;
 }
 
 interface SpecialityProps {
@@ -32,9 +35,13 @@ any) => {
         const response = await fetch(
           `${process.env.BACKEND}/getTreatmentBySlug/${title}`
         );
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const data = await response.json();
         setTreatment(data);
-        // TreatmentData(data);
       } catch (error) {
         console.error("Error fetching treatment:", error);
       } finally {
@@ -95,31 +102,49 @@ any) => {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="flex flex-col lg:flex-row items-start w-full gap-3 lg:gap-10 py-5 md:py-8 lg:py-14 bg-white"
+        className=" py-5 md:py-8 lg:py-14 bg-white"
       >
-        <div className="w-full lg:w-[50%] px-6 md:px-16 animate-fade-in-left">
-          <Image
-            width={300} // Set an initial width (can be any value) to be responsive
-            height={300}
-            src={treatment.image}
-            alt={decodeHtmlEntities(treatment.title)}
-            className="w-full object-cover border-2 border-solid border-[#fff] rounded-md"
-            style={{
-              boxShadow:
-                "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
-            }}
-          />
-        </div>
-        <div className="w-full lg:w-[50%] pt-5 lg:pt-0 flex flex-col justify-center px-5 space-y-3 lg:space-y-5 lg:-ml-20 animate-fade-in-right">
-          <h5
-            style={{ letterSpacing: "3px" }}
-            className="text-[#232c77] font-bold uppercase mainPrimary text-4xl lg:text-5xl"
+        {treatment.treatment_data.map((item: any, index: number) => (
+          <div
+            key={index}
+            className={`flex flex-col items-start w-full gap-3 lg:gap-10 py-5 lg:py-10 ${
+              index % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
+            }`}
           >
-            {decodeHtmlEntities(treatment.title)}
-          </h5>
-          <div dangerouslySetInnerHTML={{ __html: treatment.description }} />
-        </div>
+            <div className="w-full lg:w-[47%] px-6 md:px-16 animate-fade-in-left">
+              <img
+                src={item.image}
+                alt={decodeHtmlEntities(item.title)}
+                className="w-full object-cover border-2 border-solid border-[#fff] rounded-md"
+                style={{
+                  boxShadow:
+                    "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
+                }}
+              />
+            </div>
+            <div className="w-full lg:w-[47%] pt-5 lg:pt-0 flex flex-col justify-center px-5 space-y-3 lg:space-y-5 lg:-ml-20 animate-fade-in-right">
+              <h5
+                style={{ letterSpacing: "3px" }}
+                className="text-[#232c77] font-bold uppercase mainPrimary text-4xl lg:text-5xl"
+              >
+                {decodeHtmlEntities(item.title)}
+              </h5>
+              <div dangerouslySetInnerHTML={{ __html: item.description }} />
+            </div>
+          </div>
+        ))}
       </div>
+      {treatment.treatment_reviews.length !== 0 ? (
+        <Reviews reviewsData={treatment.treatment_reviews} />
+      ) : (
+        ""
+      )}
+      <AboutArpit />
+      {treatment.treatment_faqs.length !== 0 ? (
+        <FAQ faqs={treatment.treatment_faqs} />
+      ) : (
+        ""
+      )}
     </>
   );
 };

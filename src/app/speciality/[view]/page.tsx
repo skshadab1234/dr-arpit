@@ -19,9 +19,7 @@ const speciality = async ({ params }: any) => {
     title: `${treatment.meta_title} | Dr. Arpit Bansal`,
     description: treatment.meta_description,
     keywords: treatment.meta_keyword,
-    authors: [
-      { name: "Dr. Arpit Bansal"},
-    ],
+    authors: [{ name: "Dr. Arpit Bansal" }],
     robots: "index, follow",
     publisher: "Dr. Arpit Bansal",
     alternates: {

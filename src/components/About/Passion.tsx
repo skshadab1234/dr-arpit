@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import about from "@/assets/images/innews/2.png";
+import about from "@/assets/images/innews/2-min.webp";
 
 const Passion = () => {
   const bg = "./white bg.png";

@@ -12,9 +12,9 @@ import metaImage from "@/assets/arpit.jpg";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Best Cancer Specialist in India | Top Oncologist in India",
-  description:
-    "Dr. Arpit Bansal is considered the best oncologist/cancer specialist. He has an expertise in laser treatment, and advance surgeries along with the experience of 10 years.",
+//   title: "Best Cancer Specialist in India | Top Oncologist in India",
+//   description:
+//     "Dr. Arpit Bansal is considered the best oncologist/cancer specialist. He has an expertise in laser treatment, and advance surgeries along with the experience of 10 years.",
   authors: [{ name: "Dr. Arpit Bansal" }],
   robots: "index, follow",
   publisher: "Dr. Arpit Bansal",

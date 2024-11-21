@@ -23,6 +23,7 @@ interface SpecialityProps {
 
 const Speciality: React.FC<SpecialityProps> = ({
   title,
+  BreadTitle,
 }: // TreatmentData,
 any) => {
   const [treatment, setTreatment] = useState<Treatment | null>(null);
@@ -42,6 +43,9 @@ any) => {
 
         const data = await response.json();
         setTreatment(data);
+        // console.log(data);
+
+        BreadTitle(data.title);
       } catch (error) {
         console.error("Error fetching treatment:", error);
       } finally {

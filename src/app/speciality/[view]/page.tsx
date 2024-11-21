@@ -1,58 +1,47 @@
+"use client";
+
 import Speciality from "@/components/Speciality/Speciality";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import abouts from "@/assets/images/breadcrump/2.jpg";
 import BreadCrumb from "@/components/Layout/BreadCrump/BreadCrump";
 import RequestAppointment from "@/components/Contact/RequestAppointment";
-import { Metadata } from "next";
 
-const speciality = async ({ params }: any) => {
-  const title = params.view.replace("-", " ");
+const SpecialityPage = ({ params }: { params: { view: string } }) => {
+  const [title, setTitle] = useState<string>(params.view.replace("-", " "));
+  const [treatment, setTreatment] = useState<any>(null);
 
-  // Fetch the treatment data for the selected view
-  const response = await fetch(
-    `${process.env.BACKEND}/getTreatmentBySlug/${params.view}`
-  );
-  const treatment = await response.json();
+  useEffect(() => {
+    // Fetch the treatment data for the selected view
+    const fetchTreatmentData = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.BACKEND}/getTreatmentBySlug/${params.view}`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch treatment data");
+        }
+        const data = await response.json();
+        setTreatment(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-  // Define metadata based on fetched treatment data
-  const metadata: Metadata = {
-    title: `${treatment.meta_title} | Dr. Arpit Bansal`,
-    description: treatment.meta_description,
-    keywords: treatment.meta_keyword,
-    authors: [{ name: "Dr. Arpit Bansal" }],
-    robots: "index, follow",
-    publisher: "Dr. Arpit Bansal",
-    alternates: {
-      canonical: `https://drarpitbansal.in/speciality/${params.view}`,
-    },
-    openGraph: {
-      type: "website",
-      url: `https://drarpitbansal.in/speciality/${params.view}`,
-      title: `${treatment.meta_title} | Dr. Arpit Bansal`,
-      description: treatment.meta_description,
-      images: [
-        {
-          url: treatment.image,
-          alt: treatment.title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      site: "@DrArpitBansal",
-      title: `${treatment.meta_title} | Dr. Arpit Bansal`,
-      description: treatment.meta_description,
-      images: [treatment.image],
-    },
-  };
+    fetchTreatmentData();
+  }, [params.view]);
+
+  if (!treatment) {
+    // Render a loading state while treatment data is being fetched
+    return <p>Loading...</p>;
+  }
 
   return (
     <>
       <BreadCrumb title={title} page={title} img={abouts.src} version={false} />
-      <Speciality title={params.view} /> {/* Pass data here if needed */}
+      <Speciality title={params.view} BreadTitle={setTitle} />
       <RequestAppointment />
     </>
   );
 };
 
-export default speciality;
+export default SpecialityPage;

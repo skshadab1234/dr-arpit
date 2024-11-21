@@ -28,22 +28,22 @@ const slidesData = [
     backgroundImage: banner1.src,
   },
   {
-    url: "/speciality/cancer-treatment",
+    url: "/speciality/best-cancer-treatment-in-india",
     description: "",
     backgroundImage: banner10.src,
   },
   {
-    url: "/speciality/piles-surgery",
+    url: "/speciality/piles-surgery-in-india",
     description: "",
     backgroundImage: banner3.src,
   },
   {
-    url: "/speciality/hernia-surgery",
+    url: "/speciality/hernia-surgery-in-india",
     description: "",
     backgroundImage: banner2.src,
   },
   {
-    url: "/speciality/stone-surgery",
+    url: "/speciality/gall-bladder-stone-treatment-in-india",
     description: "",
     backgroundImage: banner4.src,
   },

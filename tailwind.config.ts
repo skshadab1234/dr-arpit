@@ -66,6 +66,9 @@ const config: Config = {
         'fade-in-bottom': 'fade-in-bottom 0.5s ease-out',
         'marquee': 'marquee 8s linear infinite',
       },
+      aspectRatio: {
+        square: '1 / 1',
+      },
     },
   },
   plugins: [],

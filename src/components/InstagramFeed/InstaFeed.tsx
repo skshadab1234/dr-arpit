@@ -2,6 +2,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ElfsightWidget } from "react-elfsight-widget";
 import "animate.css"; // Import animate.css for animations
+import CustomInsta from "@/components/InstagramFeed/CustomInsta";
+import InstagramHeader from "./InstagramHeader";
 
 const InstaFeed: React.FC = () => {
   const bg = "./white bg.png";
@@ -33,32 +35,6 @@ const InstaFeed: React.FC = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const hideAnchorTags = () => {
-      // Query all anchor tags in the DOM
-      const anchorTags = document.querySelectorAll<HTMLAnchorElement>("a");
-
-      // Iterate through each anchor tag
-      anchorTags.forEach((anchor) => {
-        // Check if textContent is not null and contains specific keywords
-        if (
-          anchor.href.includes("elfsight.com") ||
-          (anchor.textContent &&
-            anchor.textContent.includes("Widget is deactivated"))
-        ) {
-          // Hide the anchor tag by setting display: none;
-          anchor.style.display = "none";
-        }
-      });
-    };
-
-    // Set a timeout to delay execution by 5 seconds (5000 milliseconds)
-    const timeoutId = setTimeout(hideAnchorTags, 5000);
-
-    // Clean up the timeout if the component unmounts before the timeout executes
-    return () => clearTimeout(timeoutId);
-  }, []);
-
   return (
     <div
       ref={sectionRef}
@@ -71,7 +47,9 @@ const InstaFeed: React.FC = () => {
         backgroundPosition: "center",
       }}
     >
-      <ElfsightWidget widgetId="7a8c4182-6046-49df-9bad-2aa6bc47fbe3" />
+      <InstagramHeader />
+      <CustomInsta />
+      {/* <ElfsightWidget widgetId="659e10e2-d627-4947-b437-5220ac7d18dd" /> */}
     </div>
   );
 };

@@ -92,18 +92,22 @@ h3 {
 .ant-image.css-dev-only-do-not-override-vn1oyg {
   border: 2px solid #fff;
   border-radius: 10px;
-  box-shadow:  rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 .img.rounded-lg {
   border: 2px solid #fff;
   border-radius: 10px;
-  box-shadow:  rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
-.w-\[90\%\].md\:w-\[95\%\].lg\:w-\[94\%\].xl\:w-\[92\%\].m-0.ml-auto.py-3.lg\:py-20.xl\:py-24.relative div.ant-image.css-dev-only-do-not-override-vn1oyg {
+.w-\[90\%\].md\:w-\[95\%\].lg\:w-\[94\%\].xl\:w-\[92\%\].m-0.ml-auto.py-3.lg\:py-20.xl\:py-24.relative
+  div.ant-image.css-dev-only-do-not-override-vn1oyg {
   border: 2px solid #ffffff;
   border-radius: 10px;
 }
-.w-\[90\%\].md\:w-\[95\%\].lg\:w-\[94\%\].xl\:w-\[92\%\].m-0.ml-auto.py-3.lg\:py-20.xl\:py-24.relative div.ant-image.css-vn1oyg {
+.w-\[90\%\].md\:w-\[95\%\].lg\:w-\[94\%\].xl\:w-\[92\%\].m-0.ml-auto.py-3.lg\:py-20.xl\:py-24.relative
+  div.ant-image.css-vn1oyg {
   border: 2px solid #ffffff;
   border-radius: 10px;
 }
@@ -145,15 +149,26 @@ h3 {
   background: unset !important;
 }
 @media only screen and (max-width: 767px) {
-  :where(.css-vn1oyg).ant-tabs-centered >.ant-tabs-nav .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']), :where(.css-vn1oyg).ant-tabs-centered >div>.ant-tabs-nav .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']){
-      justify-content: unset !important;
+  :where(.css-vn1oyg).ant-tabs-centered
+    > .ant-tabs-nav
+    .ant-tabs-nav-wrap:not([class*=".ant-tabs-nav-wrap-ping"]),
+  :where(.css-vn1oyg).ant-tabs-centered
+    > div
+    > .ant-tabs-nav
+    .ant-tabs-nav-wrap:not([class*=".ant-tabs-nav-wrap-ping"]) {
+    justify-content: unset !important;
   }
 
-  :where(.css-dev-only-do-not-override-vn1oyg).ant-tabs-centered >.ant-tabs-nav .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']), :where(.css-dev-only-do-not-override-vn1oyg).ant-tabs-centered >div>.ant-tabs-nav .ant-tabs-nav-wrap:not([class*='.ant-tabs-nav-wrap-ping']){
+  :where(.css-dev-only-do-not-override-vn1oyg).ant-tabs-centered
+    > .ant-tabs-nav
+    .ant-tabs-nav-wrap:not([class*=".ant-tabs-nav-wrap-ping"]),
+  :where(.css-dev-only-do-not-override-vn1oyg).ant-tabs-centered
+    > div
+    > .ant-tabs-nav
+    .ant-tabs-nav-wrap:not([class*=".ant-tabs-nav-wrap-ping"]) {
     justify-content: unset !important;
   }
 }
-
 
 .BulletsControl__BulletsControlItem-sc-vxd05w-2.bZMJWw {
   background: white !important;
@@ -165,4 +180,7 @@ span.swiper-pagination-bullet.swiper-pagination-bullet-active {
 
 span.swiper-pagination-bullet {
   background: white !important;
+}
+img.w-full.h-\[400px\].object-cover.object-center {
+  height: 400px !important;
 }

@@ -66,9 +66,11 @@ export default function Home() {
       <SpecialityComp />
       <Blog title="home" />
       <Features />
+
       <InstaFeed />
       <GoogleFeed />
       <LogoCarousel />
+
       <RequestAppointment />
       {/* <FloatingAppointment /> */}
     </>

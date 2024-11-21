@@ -17,13 +17,13 @@ import { Metadata } from "next";
 import metaImage from "@/assets/arpit.jpg";
 
 export const metadata: Metadata = {
-  title: "Dr Arpit Bansal",
+  title: "Best Cancer Specialist in India | Top Oncologist in India",
   description:
-    "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS and FIBC is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
+    "Dr. Arpit Bansal is considered the best oncologist/cancer specialist. He has an expertise in laser treatment, and advance surgeries along with the experience of 10 years.",
   keywords: "MBBS | MS | FACS | FMAS | FCS | FIBC",
 
   // SEO meta tags
-  authors: [{ name: "Dr. Arpit Bansal", url: "https://drarpitbansal.in" }],
+  authors: [{ name: "Dr. Arpit Bansal" }],
   robots: "index, follow", // To allow search engine crawling and indexing
   publisher: "Dr. Arpit Bansal",
 

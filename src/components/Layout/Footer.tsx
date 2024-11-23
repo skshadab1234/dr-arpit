@@ -68,17 +68,22 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-8 xl:grid-cols-3">
           {/* About Section */}
           <div>
-            <img className="w-60 mb-2" src={logo.src} alt="Dr Arpit Bansal" />
+            <img className="w-60" src={logo.src} alt="Dr Arpit Bansal" />
 
-            <p className="mt-5 text-base font-medium text-justify">
+            <p className="mt-5 text-base font-medium text-left">
               Dr. Arpit Bansal, an Advanced Laparoscopy and Cancer Surgeon, has
-              mastered an art, which many struggle to understand. A man of
-              varied interests, he has created a fine balance between his
-              profession and passion. According to Dr. Arpit Bansal, with time
-              management and focus, one can excel in both fields. His journey
-              stands testament to his extraordinary talent and unyielding
-              determination.
+              mastered an art, which many struggle to understand.
             </p>
+            <div className="md:w-full flex justify-center items-center">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14412.230957483418!2d81.8466334!3d25.4363331!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3985353001028a4d%3A0x42a30fe2226fa5e5!2sDr%20Arpit%20Bansal%20%7C%20Laproscopy%20Doctor%2Fhernia%20Doctor%2Flaser%20Piles%20Doctor%2FVaricose%20Vein%20Doctor%20In%20Prayagraj!5e0!3m2!1sen!2sin!4v1725442881878!5m2!1sen!2sin"
+                width="100%"
+                height="180"
+                className="rounded-lg border-4 border-solid"
+                style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
 
           {/* Speciality Section */}
@@ -192,26 +197,34 @@ const Footer = () => {
                     </a>
                   </h6>
                 </div>
+                <div className="flex  items-start gap-2">
+                  <div>
+                    <MapPin size={20} color="#00008b" />
+                  </div>
+                  <h6 className="text-justify">
+                    <a
+                      target="_blank"
+                      href="https://maps.app.goo.gl/dS3durLe8cdBshKM8"
+                    >
+                      {" "}
+                      Ground Floor 106A/5A Malviya Road Darbhanga Colony George
+                      Town Prayagraj.{" "}
+                    </a>
+                  </h6>
+                </div>
                 <div className="flex items-center gap-2">
                   <PhoneCall size={20} color="#00008b" />
                   <a href="tel:+918141402111">+91 81414 02111</a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <PhoneCall size={20} color="#00008b" />
+                  <a href="tel:+919129310111">+91 91293 10111</a>
                 </div>
                 <div className="flex items-center gap-2">
                   <MailIcon size={20} color="#00008b" />
                   <a href="mailto:drarpitbansal@gmail.com">
                     drarpitbansal@gmail.com
                   </a>
-                </div>
-
-                <div className="md:w-full flex justify-center items-center">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14412.230957483418!2d81.8466334!3d25.4363331!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3985353001028a4d%3A0x42a30fe2226fa5e5!2sDr%20Arpit%20Bansal%20%7C%20Laproscopy%20Doctor%2Fhernia%20Doctor%2Flaser%20Piles%20Doctor%2FVaricose%20Vein%20Doctor%20In%20Prayagraj!5e0!3m2!1sen!2sin!4v1725442881878!5m2!1sen!2sin"
-                    width="100%"
-                    height="180"
-                    className="rounded-lg border-4 border-solid"
-                    style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
-                    loading="lazy"
-                  ></iframe>
                 </div>
               </div>
             </div>

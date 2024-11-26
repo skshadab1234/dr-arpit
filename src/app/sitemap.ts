@@ -7,7 +7,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const speciality = await response.json();
   // console.log(speciality.length,speciality)
 
-  const storiesEntries: MetadataRoute.Sitemap = speciality["treatments"].map(
+  const specialitys: MetadataRoute.Sitemap = speciality["treatments"].map(
     ({ slug, modified }: any) => ({
       url: `${process.env.NEXT_PUBLIC_SITE_URL}/speciality/${slug}`,
       lastModified: modified,
@@ -21,7 +21,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const diseases = await responseexpertise.json();
   // console.log(diseases["Our Expertise"].posts,"Exxxp");
 
-  const expertiseEntries: MetadataRoute.Sitemap = diseases["diseases"].map(
+  const disease: MetadataRoute.Sitemap = diseases["diseases"].map(
     ({ slug, modified }: any) => ({
       url: `${process.env.NEXT_PUBLIC_SITE_URL}/patients-education/${slug}`,
       lastModified: modified,
@@ -65,7 +65,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: "2024-11-06T12:33:18+00:00",
       priority: 0.8,
     },
-    ...storiesEntries,
-    ...expertiseEntries,
+    ...specialitys,
+    ...disease,
   ];
 }

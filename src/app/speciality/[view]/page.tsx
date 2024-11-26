@@ -7,7 +7,7 @@ import BreadCrumb from "@/components/Layout/BreadCrump/BreadCrump";
 import RequestAppointment from "@/components/Contact/RequestAppointment";
 
 const SpecialityPage = ({ params }: { params: { view: string } }) => {
-  const [title, setTitle] = useState<string>(params.view.replace("-", " "));
+  const [title, setTitle] = useState<any>();
   const [treatment, setTreatment] = useState<any>(null);
 
   useEffect(() => {

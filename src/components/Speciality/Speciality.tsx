@@ -19,13 +19,10 @@ interface Treatment {
 
 interface SpecialityProps {
   title: string;
+  BreadTitle: any;
 }
 
-const Speciality: React.FC<SpecialityProps> = ({
-  title,
-  BreadTitle,
-}: // TreatmentData,
-any) => {
+const Speciality: React.FC<SpecialityProps> = ({ title, BreadTitle }: any) => {
   const [treatment, setTreatment] = useState<Treatment | null>(null);
   const [loading, setLoading] = useState(true);
   const bg = "/white-bg.png"; // Updated path to be more consistent

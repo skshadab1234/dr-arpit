@@ -16,6 +16,8 @@ const About = () => {
     threshold: 0.1, // Section is considered in view when 10% of it is visible
   });
 
+
+  
   const SkeletonLoader = () => {
     return (
       <div className="space-y-4 p-7">

@@ -16,9 +16,7 @@ export const metadata: Metadata = {
   keywords: "MBBS | MS | FACS | FMAS | FCS | FIBC",
 
   // SEO meta tags
-  authors: [
-    { name: "Dr. Arpit Bansal"},
-  ],
+  authors: [{ name: "Dr. Arpit Bansal" }],
   robots: "index, follow", // To allow search engine crawling and indexing
   publisher: "Dr. Arpit Bansal",
 

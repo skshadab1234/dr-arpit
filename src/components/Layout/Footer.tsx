@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, MapPin, PhoneCall, MailIcon } from "lucide-react";
 import logo from "@/assets/arpitlogo.png";
+import { LuClock } from "react-icons/lu";
 
 interface Treatment {
   id: number;
@@ -225,6 +226,14 @@ const Footer = () => {
                   <a href="mailto:drarpitbansal@gmail.com">
                     drarpitbansal@gmail.com
                   </a>
+                </div>
+                <div className="flex items-center gap-2">
+                  <LuClock size={20} color="#00008b" />
+                  <a>11am to 5pm at JJH</a>
+                </div>
+                <div className="flex items- gap-2">
+                  <LuClock size={20} color="#00008b" />
+                  <a>6pm to 8pm at Gut and Longevity Clinic</a>
                 </div>
               </div>
             </div>

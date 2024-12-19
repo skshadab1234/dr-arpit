@@ -23,7 +23,7 @@ const AboutArpit = () => {
           <div
             className={`px-3 m-auto duration-300 w-full lg:w-1/2 xl:w-7/12}`}
           >
-            <h1 className="text-3xl font-bold text-left mb-2 relative">
+            <h2 className="text-3xl font-bold text-left mb-2 relative">
               <span
                 style={{ letterSpacing: "3px" }}
                 className="text-[#232c77] font-bold uppercase mainPrimary text-4xl lg:text-6xl"
@@ -31,7 +31,7 @@ const AboutArpit = () => {
                 Dr. Arpit Bansal
               </span>
               <div className="absolute top-0 right-0 w-10 h-7 bg-[#171f56] opacity-20 rotate-45"></div>
-            </h1>
+            </h2>
             <span className="text-xl mt-0 lg:mt-2 mb-2 font-semibold">
               MBBS | MS | FACS | FMAS | FCS | FIBC
             </span>

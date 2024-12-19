@@ -42,7 +42,7 @@ const Speciality: React.FC<SpecialityProps> = ({ title, BreadTitle }: any) => {
         setTreatment(data);
         // console.log(data);
 
-        BreadTitle(data.title);
+        BreadTitle(data.speciality_h1);
       } catch (error) {
         console.error("Error fetching treatment:", error);
       } finally {

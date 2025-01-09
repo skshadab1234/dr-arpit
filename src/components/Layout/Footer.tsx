@@ -185,7 +185,11 @@ const Footer = () => {
               <div className="space-y-3 mt-4 text-sm">
                 <div className="flex  items-start gap-2">
                   <div>
-                    <MapPin size={20} color="#00008b" />
+                    <MapPin
+                      size={20}
+                      style={{ width: "30px" }}
+                      color="#00008b"
+                    />
                   </div>
                   <h6 className="text-justify">
                     <a
@@ -200,7 +204,11 @@ const Footer = () => {
                 </div>
                 <div className="flex  items-start gap-2">
                   <div>
-                    <MapPin size={20} color="#00008b" />
+                    <MapPin
+                      size={20}
+                      style={{ width: "30px" }}
+                      color="#00008b"
+                    />
                   </div>
                   <h6 className="text-justify">
                     <a
@@ -208,32 +216,53 @@ const Footer = () => {
                       href="https://maps.app.goo.gl/dS3durLe8cdBshKM8"
                     >
                       {" "}
-                      Ground Floor 106A/5A Malviya Road Darbhanga Colony George
-                      Town Prayagraj.{" "}
+                      Ground Floor 106A/5A Malviya Road George Town Prayagraj{" "}
                     </a>
                   </h6>
                 </div>
                 <div className="flex items-center gap-2">
-                  <PhoneCall size={20} color="#00008b" />
+                  <PhoneCall
+                    size={20}
+                    style={{ width: "30px" }}
+                    color="#00008b"
+                  />
                   <a href="tel:+918141402111">+91 81414 02111</a>
                 </div>
-                <div className="flex items-center gap-2">
-                  <PhoneCall size={20} color="#00008b" />
+                <div className="flex items-start gap-2">
+                  <PhoneCall
+                    size={20}
+                    style={{ width: "30px" }}
+                    color="#00008b"
+                  />
                   <a href="tel:+919129310111">+91 91293 10111</a>
                 </div>
-                <div className="flex items-center gap-2">
-                  <MailIcon size={20} color="#00008b" />
+                <div className="flex items-start gap-2">
+                  <MailIcon
+                    size={20}
+                    style={{ width: "30px" }}
+                    color="#00008b"
+                  />
                   <a href="mailto:drarpitbansal@gmail.com">
                     drarpitbansal@gmail.com
                   </a>
                 </div>
-                <div className="flex items-center gap-2">
-                  <LuClock size={20} color="#00008b" />
-                  <a>11am to 5pm at JJH</a>
+                <div className="flex items-start gap-2">
+                  <LuClock
+                    size={20}
+                    style={{ width: "30px" }}
+                    color="#00008b"
+                  />
+                  <a>11am to 5pm at JJH (Monday to saturday)</a>
                 </div>
-                <div className="flex items- gap-2">
-                  <LuClock size={20} color="#00008b" />
-                  <a>6pm to 8pm at Gut and Longevity Clinic</a>
+                <div className="flex items-start gap-2">
+                  <LuClock
+                    size={20}
+                    style={{ width: "40px" }}
+                    color="#00008b"
+                  />
+                  <a>
+                    6pm to 8pm at Gut and Longevity Clinic (Monday to saturday)
+                  </a>
                 </div>
               </div>
             </div>

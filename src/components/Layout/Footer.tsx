@@ -183,8 +183,8 @@ const Footer = () => {
               <p className="font-bold text-xl">Contact Info</p>
               <div className="w-20 h-0.5 bg-primary rounded-full"></div>
               <div className="space-y-3 mt-4 text-sm">
-                <div className="flex  items-start gap-2">
-                  <div>
+                <div className="flex items-start gap-2">
+                  <div className="flex-shrink-0">
                     <MapPin
                       size={20}
                       style={{ width: "30px" }}
@@ -196,14 +196,14 @@ const Footer = () => {
                       target="_blank"
                       href="https://www.google.com/maps?sca_esv=9783522cabc36d5f&sxsrf=ADLYWIIq8DgeJ3WC8yuIto4Ny0mNMvFSoA:1726059590343&lsig=AB86z5W8LVVMCDKPemXbeL-hE1XF&shndl=-1&shem=lsde,vslcca&kgs=5f63309b8c4d9278&um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KU2KAgEwNYU5MeWlbyLiD6NC&daddr=ROOM+NO+23,+JEEVAN+JYOTI+HOSPITAL+CAMPUS,+162,+Himmat+Ganj,+Bai+Ka+Bagh,+Prayagraj,+Uttar+Pradesh+211003"
                     >
-                      {" "}
                       Jeevan Jyoti Hospital, 162 Bai Ka Bagh, Prayagraj 211003,
-                      India.{" "}
+                      India.
                     </a>
                   </h6>
                 </div>
-                <div className="flex  items-start gap-2">
-                  <div>
+
+                <div className="flex items-start gap-2">
+                  <div className="flex-shrink-0">
                     <MapPin
                       size={20}
                       style={{ width: "30px" }}
@@ -215,53 +215,67 @@ const Footer = () => {
                       target="_blank"
                       href="https://maps.app.goo.gl/dS3durLe8cdBshKM8"
                     >
-                      {" "}
-                      Ground Floor 106A/5A Malviya Road George Town Prayagraj{" "}
+                      Ground Floor 106A/5A Malviya Road George Town Prayagraj
                     </a>
                   </h6>
                 </div>
+
                 <div className="flex items-center gap-2">
-                  <PhoneCall
-                    size={20}
-                    style={{ width: "30px" }}
-                    color="#00008b"
-                  />
+                  <div className="flex-shrink-0">
+                    <PhoneCall
+                      size={20}
+                      style={{ width: "30px" }}
+                      color="#00008b"
+                    />
+                  </div>
                   <a href="tel:+918141402111">+91 81414 02111</a>
                 </div>
+
                 <div className="flex items-start gap-2">
-                  <PhoneCall
-                    size={20}
-                    style={{ width: "30px" }}
-                    color="#00008b"
-                  />
+                  <div className="flex-shrink-0">
+                    <PhoneCall
+                      size={20}
+                      style={{ width: "30px" }}
+                      color="#00008b"
+                    />
+                  </div>
                   <a href="tel:+919129310111">+91 91293 10111</a>
                 </div>
+
                 <div className="flex items-start gap-2">
-                  <MailIcon
-                    size={20}
-                    style={{ width: "30px" }}
-                    color="#00008b"
-                  />
+                  <div className="flex-shrink-0">
+                    <MailIcon
+                      size={20}
+                      style={{ width: "30px" }}
+                      color="#00008b"
+                    />
+                  </div>
                   <a href="mailto:drarpitbansal@gmail.com">
                     drarpitbansal@gmail.com
                   </a>
                 </div>
+
                 <div className="flex items-start gap-2">
-                  <LuClock
-                    size={20}
-                    style={{ width: "30px" }}
-                    color="#00008b"
-                  />
-                  <a>11am to 5pm at JJH (Monday to saturday)</a>
+                  <div className="flex-shrink-0">
+                    <LuClock
+                      size={20}
+                      style={{ width: "30px" }}
+                      color="#00008b"
+                    />
+                  </div>
+                  <a>11am to 5pm at JJH (Monday to Saturday)</a>
                 </div>
+
                 <div className="flex items-start gap-2">
-                  <LuClock
-                    size={20}
-                    style={{ width: "40px" }}
-                    color="#00008b"
-                  />
+                  <div className="flex-shrink-0">
+                    <LuClock
+                      size={20}
+                      style={{ width: "30px" }}
+                      color="#00008b"
+                    />
+                  </div>
                   <a>
-                    6pm to 8pm at Gut and Longevity Clinic (Monday to saturday)
+                    6pm to 8pm at Gut and Longevity Clinic (Monday to Saturday)
                   </a>
                 </div>
               </div>

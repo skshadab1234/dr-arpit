@@ -31,4 +31,4 @@ jobs:
           nvm use 20.15.1
           npm install
           npm run build
-          pm2 reload 57
+          pm2 reload drarpitbansal.in

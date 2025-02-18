@@ -2,6 +2,7 @@
 import { sendContactForm } from "@/lib/ContactForm";
 import Swal from "sweetalert2";
 import React, { useState } from "react";
+import { contactFormSubmission } from "@/lib/contactFormSubmission";
 
 const ContactForm: React.FC = () => {
   const [name, setName] = useState<string | null>(null);
@@ -23,53 +24,64 @@ const ContactForm: React.FC = () => {
 
     setSubmitting(true);
 
-    const emailSent = await sendContactForm(
-      name || undefined, // Convert null to undefined
-      email || undefined,
-      phone || undefined,
-      message || undefined
-    );
+    const response = await contactFormSubmission(name, phone, email, message);
+    if (response.status === 200) {
+      const emailSent = await sendContactForm(
+        name || undefined, // Convert null to undefined
+        email || undefined,
+        phone || undefined,
+        message || undefined
+      );
 
-    if (emailSent) {
-      // Set submitting to false and clear form fields
-      setSubmitting(false);
-      setName("");
-      setEmail("");
-      setPhone("");
-      setMessage("");
+      if (emailSent) {
+        // Set submitting to false and clear form fields
+        setSubmitting(false);
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
 
-      // Notify success with Swal
-      Swal.fire({
-        title: "Success!",
-        text: "Our team will reach you soon! Thanks",
-        icon: "success",
-      });
+        // Notify success with Swal
+        Swal.fire({
+          title: "Success!",
+          text: "Our team will reach you soon! Thanks",
+          icon: "success",
+        });
 
-      try {
-        const response = await fetch(
-          "https://rubyeng.demo-web.live/wp-json/contact_form/v1/submit",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              name: name || "",
-              email: email || "",
-              contact: `${phone || ""}`,
-              message: message || "",
-            }),
+        try {
+          const response = await fetch(
+            "https://rubyeng.demo-web.live/wp-json/contact_form/v1/submit",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                name: name || "",
+                email: email || "",
+                contact: `${phone || ""}`,
+                message: message || "",
+              }),
+            }
+          );
+
+          if (!response.ok) {
+            setSubmitting(false);
+            throw new Error("Network response was not ok");
           }
-        );
 
-        if (!response.ok) {
-          setSubmitting(false);
-          throw new Error("Network response was not ok");
+          const responseData = await response.json();
+        } catch (error) {
+          console.error("There was a problem with the fetch operation:", error);
         }
-
-        const responseData = await response.json();
-      } catch (error) {
-        console.error("There was a problem with the fetch operation:", error);
+      } else {
+        // Set submitting to false and notify failure
+        setSubmitting(false);
+        Swal.fire({
+          title: "Failed!",
+          text: "Form Submission Failed!",
+          icon: "error",
+        });
       }
     } else {
       // Set submitting to false and notify failure

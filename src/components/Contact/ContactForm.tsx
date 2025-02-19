@@ -147,6 +147,7 @@ const ContactForm: React.FC = () => {
             <button
               type="submit"
               className="w-full text-base text-white bg-[#232c77] font-bold p-3 transition border shadow-lg rounded-full bg-primary hover:bg-opacity-60"
+              disabled={submitting}
             >
               {submitting ? "Sending..." : "Send Message"}
             </button>

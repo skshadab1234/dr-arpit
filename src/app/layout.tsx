@@ -12,9 +12,6 @@ import metaImage from "@/assets/arpit.jpg";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-//   title: "Best Cancer Specialist in India | Top Oncologist in India",
-//   description:
-//     "Dr. Arpit Bansal is considered the best oncologist/cancer specialist. He has an expertise in laser treatment, and advance surgeries along with the experience of 10 years.",
   authors: [{ name: "Dr. Arpit Bansal" }],
   robots: "index, follow",
   publisher: "Dr. Arpit Bansal",
@@ -69,6 +66,28 @@ export default function RootLayout({
                 "https://www.youtube.com/@DRARPITBANSAL",
                 "https://www.linkedin.com/in/dr-arpit-bansal-0b39891b/",
               ],
+            }),
+          }}
+        />
+
+        <Script
+          id="json-ld-person-script"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org/",
+              "@type": "Person",
+              name: "Dr Arpit Bansal",
+              url: "https://drarpitbansal.in/",
+              image: "https://drarpitbansal.in/_next/static/media/270.358eb863.png",
+              sameAs: [
+                "https://www.facebook.com/drarpit/",
+                "https://www.instagram.com/drarpitbansal.surgeon/",
+                "https://www.youtube.com/@DRARPITBANSAL",
+                "https://www.linkedin.com/in/dr-arpit-bansal-0b39891b/",
+              ],
+              jobTitle: "Doctor",
             }),
           }}
         />

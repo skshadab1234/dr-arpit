@@ -184,3 +184,6 @@ span.swiper-pagination-bullet {
 img.w-full.h-\[400px\].object-cover.object-center {
   height: 400px !important;
 }
+.parent:last-child {
+  display: none;
+}

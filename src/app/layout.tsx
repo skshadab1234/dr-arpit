@@ -88,6 +88,24 @@ export default function RootLayout({
                 "https://www.linkedin.com/in/dr-arpit-bansal-0b39891b/",
               ],
               jobTitle: "Doctor",
+              review: {
+                "@type": "Review",
+                author: {
+                  "@type": "Person",
+                  name: "Patient Name",
+                },
+                reviewRating: {
+                  "@type": "Rating",
+                  ratingValue: "5",
+                  bestRating: "5",
+                },
+                reviewBody: "Dr. Arpit Bansal provided excellent care and was very professional.",
+              },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.8",
+                reviewCount: "120",
+              },
             }),
           }}
         />

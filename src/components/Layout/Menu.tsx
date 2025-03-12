@@ -186,7 +186,7 @@ const Menu: React.FC<MenuProps> = ({
                           className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
                           href={`/speciality/${treatment.slug}`}
                         >
-                          <ArrowRight size={16} />
+                          <ArrowRight size={16} className="shrink-0" />
                           <span className="hover:text-primary line-clamp-1">
                             {treatment.title}
                           </span>
@@ -209,7 +209,7 @@ const Menu: React.FC<MenuProps> = ({
                             className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
                             href={`/patients-education/${disease.slug}`}
                           >
-                            <ArrowRight size={16} />
+                            <ArrowRight size={16} className="shrink-0" />
                             <span className="hover:text-primary line-clamp-1">
                               {disease.title}
                             </span>

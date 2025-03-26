@@ -95,6 +95,28 @@ const Speciality: React.FC<SpecialityProps> = ({ title, BreadTitle }: any) => {
           rel="canonical"
           href={`https://drarpitbansal.in/speciality/${title}`}
         />
+        <meta
+          property="og:title"
+          content={treatment.meta_title || "Default Page Title"}
+        />
+        <meta
+          property="og:description"
+          content={
+            treatment.meta_description || "Default description for the page."
+          }
+        />
+        <meta
+          property="og:image"
+          content={
+            treatment.treatment_data.image ||
+            "https://drarpitbansal.in/icon.png"
+          }
+        />
+        <meta
+          property="og:url"
+          content={`https://drarpitbansal.in/speciality/${title}`}
+        />
+        <meta property="og:type" content="website" />
       </head>
 
       <div

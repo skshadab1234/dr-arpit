@@ -89,7 +89,7 @@ const InNews = () => {
           className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50"
           onClick={closeModal}
         >
-          <div className="relative" onClick={(e) => e.stopPropagation()}>
+          <div className="relative w-full lg:w-1/3" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={closeModal}
               className="absolute top-2 right-2 text-white bg-white p-2 rounded-full"

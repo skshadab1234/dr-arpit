@@ -1,4 +1,5 @@
 import newData1 from "@/assets/images/innews/new1.png";
+import article from "@/assets/images/innews/article.png";
 import newData2 from "@/assets/images/innews/new2.png";
 import newData3 from "@/assets/images/innews/new3.png";
 import news1 from "@/assets/images/innews/9-min.webp";
@@ -24,6 +25,7 @@ const inNewsDatas = [
   { id: 3, image: newData3, heading: "News 3" },
   { id: 4, image: news4, heading: "News 4" },
   { id: 5, image: news5, heading: "News 5" },
+  { id: 1, image: article, heading: "article" },
   { id: 6, image: news6, heading: "News 6" },
   { id: 7, image: news7, heading: "News 7" },
   { id: 8, image: news8, heading: "News 8" },

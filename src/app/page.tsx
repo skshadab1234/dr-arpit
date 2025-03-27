@@ -35,16 +35,16 @@ export const metadata: Metadata = {
 
   // Open Graph meta tags
   openGraph: {
-    type: "website",
-    url: "https://drarpitbansal.in",
     title: "Dr. Arpit Bansal",
     description:
       "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS and FIBC is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
+    url: "https://drarpitbansal.in",
+    type: "website",
     images: [
       {
-        url: "https://drarpitbansal.in/icon.png",
-        width: 500,
-        height: 500,
+        url: "https://drarpitbansal.in/logo.png",
+        width: 1200,
+        height: 630,
         alt: "Dr. Arpit Bansal - Laparoscopic & Onco Surgeon",
       },
     ],

@@ -105,13 +105,7 @@ const Speciality: React.FC<SpecialityProps> = ({ title, BreadTitle }: any) => {
             treatment.meta_description || "Default description for the page."
           }
         />
-        <meta
-          property="og:image"
-          content={
-            treatment.treatment_data.image ||
-            "https://drarpitbansal.in/icon.png"
-          }
-        />
+        <meta property="og:image" content="https://drarpitbansal.in/icon.png" />
         <meta
           property="og:url"
           content={`https://drarpitbansal.in/speciality/${title}`}

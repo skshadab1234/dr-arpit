@@ -42,7 +42,7 @@ export const metadata: Metadata = {
       "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS and FIBC is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
     images: [
       {
-        url: metaImage.src,
+        url: "https://drarpitbansal.in/icon.png",
         alt: "Dr. Arpit Bansal - Laparoscopic & Onco Surgeon",
       },
     ],

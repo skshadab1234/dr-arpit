@@ -25,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta property="og:image" content="https://drarpitbansal.in/icon.png" />
         {/* Google Tag Manager */}
         <Script
           id="gtm-script"
@@ -80,7 +81,8 @@ export default function RootLayout({
               "@type": "Person",
               name: "Dr Arpit Bansal",
               url: "https://drarpitbansal.in/",
-              image: "https://drarpitbansal.in/_next/static/media/270.358eb863.png",
+              image:
+                "https://drarpitbansal.in/_next/static/media/270.358eb863.png",
               sameAs: [
                 "https://www.facebook.com/drarpit/",
                 "https://www.instagram.com/drarpitbansal.surgeon/",
@@ -99,7 +101,8 @@ export default function RootLayout({
                   ratingValue: "5",
                   bestRating: "5",
                 },
-                reviewBody: "Dr. Arpit Bansal provided excellent care and was very professional.",
+                reviewBody:
+                  "Dr. Arpit Bansal provided excellent care and was very professional.",
               },
               aggregateRating: {
                 "@type": "AggregateRating",

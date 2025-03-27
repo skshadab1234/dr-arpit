@@ -43,6 +43,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://drarpitbansal.in/icon.png",
+        width: 500,
+        height: 500,
         alt: "Dr. Arpit Bansal - Laparoscopic & Onco Surgeon",
       },
     ],
@@ -60,9 +62,6 @@ export const metadata: Metadata = {
 };
 export default function Home() {
   // console.log(process.env.BACKEND, "fdsfdsfdsf");
-  <head>
-    <meta property="og:image" content="https://drarpitbansal.in/icon.png" />
-  </head>;
   return (
     <>
       <Slider />

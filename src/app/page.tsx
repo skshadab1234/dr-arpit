@@ -60,6 +60,9 @@ export const metadata: Metadata = {
 };
 export default function Home() {
   // console.log(process.env.BACKEND, "fdsfdsfdsf");
+  <head>
+    <meta property="og:image" content="https://drarpitbansal.in/icon.png" />
+  </head>;
   return (
     <>
       <Slider />

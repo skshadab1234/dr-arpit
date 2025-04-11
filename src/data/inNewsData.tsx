@@ -18,6 +18,7 @@ import news13 from "@/assets/images/innews/21.png";
 import news14 from "@/assets/images/innews/22.png";
 import news15 from "@/assets/images/innews/23.png";
 import news16 from "@/assets/images/innews/24.png";
+import news17 from "@/assets/images/innews/blueverve.png";
 
 const inNewsDatas = [
   { id: 1, image: newData1, heading: "News 1" },
@@ -26,6 +27,7 @@ const inNewsDatas = [
   { id: 4, image: news4, heading: "News 4" },
   { id: 5, image: news5, heading: "News 5" },
   { id: 1, image: article, heading: "article" },
+  { id: 1, image: news17, heading: "blueverve" },
   { id: 6, image: news6, heading: "News 6" },
   { id: 7, image: news7, heading: "News 7" },
   { id: 8, image: news8, heading: "News 8" },

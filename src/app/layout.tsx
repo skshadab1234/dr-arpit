@@ -16,21 +16,21 @@ export const metadata: Metadata = {
   robots: "index, follow",
   publisher: "Dr. Arpit Bansal",
 
-  openGraph: {
-    title: "Dr. Arpit Bansal",
-    description:
-      "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS and FIBC is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
-    url: "https://drarpitbansal.in",
-    type: "website",
-    images: [
-      {
-        url: "https://drarpitbansal.in/logo.png",
-        width: 1200,
-        height: 630,
-        alt: "Dr. Arpit Bansal - Laparoscopic & Onco Surgeon",
-      },
-    ],
-  },
+  // openGraph: {
+  //   title: "Dr. Arpit Bansal",
+  //   description:
+  //     "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS and FIBC is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
+  //   url: "https://drarpitbansal.in",
+  //   type: "website",
+  //   images: [
+  //     {
+  //       url: "https://drarpitbansal.in/logo.png",
+  //       width: 1200,
+  //       height: 630,
+  //       alt: "Dr. Arpit Bansal - Laparoscopic & Onco Surgeon",
+  //     },
+  //   ],
+  // },
 };
 
 export default function RootLayout({

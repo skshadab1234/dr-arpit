@@ -8,7 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   );
   const speciality = await response.json();
-  console.log(speciality.length, speciality);
+  // console.log(speciality.length, speciality);
 
   const specialitys: MetadataRoute.Sitemap = speciality["treatments"].map(
     ({ slug, modified }: any) => ({

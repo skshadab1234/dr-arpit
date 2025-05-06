@@ -2,10 +2,13 @@ import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const response = await fetch(
-    `${process.env.BACKEND}/getAllTreatments?per_page=1000`
+    `${process.env.BACKEND}/getAllTreatments?per_page=1000`,
+    {
+      next: { revalidate: 600 }, // Revalidate every 600 seconds (10 minutes)
+    }
   );
   const speciality = await response.json();
-  // console.log(speciality.length,speciality)
+  console.log(speciality.length, speciality);
 
   const specialitys: MetadataRoute.Sitemap = speciality["treatments"].map(
     ({ slug, modified }: any) => ({
@@ -16,7 +19,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   );
 
   const responseexpertise = await fetch(
-    `${process.env.BACKEND}/diseases?per_page=1000`
+    `${process.env.BACKEND}/diseases?per_page=1000`,
+    {
+      next: { revalidate: 600 }, // Revalidate every 10 minutes
+    }
   );
   const diseases = await responseexpertise.json();
   // console.log(diseases["Our Expertise"].posts,"Exxxp");

@@ -71,6 +71,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: "2024-11-06T12:33:18+00:00",
       priority: 0.8,
     },
+    {
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/bringing-people-together`,
+      lastModified: "2024-11-06T12:33:18+00:00",
+      priority: 0.8,
+    },
+    {
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/where-passion-meets-recognition`,
+      lastModified: "2024-11-06T12:33:18+00:00",
+      priority: 0.8,
+    },
     ...specialitys,
     ...disease,
   ];

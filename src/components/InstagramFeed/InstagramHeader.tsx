@@ -53,7 +53,7 @@ const InstagramHeader = () => {
         {/* Stats */}
         <div className="flex space-x-6 text-gray-800">
           <div className="text-center">
-            <p className="font-bold text-lg">75.4k</p>
+            <p className="font-bold text-lg">109k</p>
             <p className="text-sm text-gray-500">Followers</p>
           </div>
           <div className="text-center">

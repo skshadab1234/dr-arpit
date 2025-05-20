@@ -8,7 +8,7 @@ const AboutArpit = () => {
           <div
             className={`relative flex justify-center  items-center w-full lg:w-1/3 xl:w-5/12 my-5 duration-300}`}
           >
-            <div className="relative">
+            <div className="relative p-3 lg:p-0">
               <img
                 style={{
                   boxShadow:

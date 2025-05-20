@@ -300,7 +300,7 @@ const Footer = () => {
       </div>
       <button
         onClick={scrollToTop}
-        className="fixed bottom-4 right-4 p-3 bg-blue-600 text-white rounded-full shadow-md z-50"
+        className="fixed bottom-4 right-4 p-3 bg-[#232c77] text-white rounded-full shadow-md z-50"
       >
         ↑
       </button>

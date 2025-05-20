@@ -132,7 +132,7 @@ const BlogSingle = ({ params, BlogData }: any) => {
             </div>
             <div className="entry-content mt-2">
               <div
-                className="text-gray-600 mb-2"
+                className="text-black text-justify mb-2"
                 dangerouslySetInnerHTML={{ __html: blog.description }}
               />
             </div>

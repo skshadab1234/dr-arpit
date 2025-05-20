@@ -21,7 +21,7 @@ const FloatingButton = () => {
     return null;
   }
   return (
-    <div className="group z-50 drop-shadow-xl fixed bottom-3 right-3 p-2  flex items-end justify-end w-24 h-24 ">
+    <div className="group z-50 drop-shadow-xl fixed bottom-3 left-3 p-2  flex items-end justify-end w-24 h-24 ">
       <div className="text-white shadow-xl flex items-center cursor-pointer justify-center p-3 rounded-full bg-[#232c77] z-50 absolute  ">
         <MessageCircle color="white" size={25} />
       </div>

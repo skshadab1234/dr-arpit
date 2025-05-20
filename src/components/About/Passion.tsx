@@ -69,19 +69,19 @@ const Passion = () => {
               <div className="absolute top-0 right-0 w-10 h-7 bg-[#171f56] opacity-20 rotate-45"></div>
             </h2>
 
-            <p className="text-base text-white my-4 text-left">
+            <p className="text-base text-white my-4 text-justify">
               As an accomplished wildlife photographer, I've had the thrill of
               capturing over 1,146 bird species in their natural habitats across
               India! Guess what? I've even secured the 6th rank in the country
               on eBird.org for birding—how cool is that?
             </p>
-            <p className="text-base text-white my-4 text-left">
+            <p className="text-base text-white my-4 text-justify">
               But wait, there's more! Each year, I team up with WWF to create an
               annual bird calendar featuring some of my favorite feathered
               friends. It's my way of sharing the beauty of our avian companions
               and contributing to conservation efforts. 🌍
             </p>
-            <p className="text-base text-white my-4 text-left">
+            <p className="text-base text-white my-4 text-justify">
               Beyond birding, I also connect with nature and find inner peace
               through underwater and Blue Mind meditation sessions, designed to
               deepen my appreciation for the ocean's beauty and tranquilit

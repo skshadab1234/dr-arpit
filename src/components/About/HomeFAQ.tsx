@@ -55,13 +55,13 @@ const HomeFAQ = () => {
       >
         Frequently Asked Questions
       </h2>
-      <div className="space-y-4">
+      <div className="space-y-4 pb-4">
         {faqs.map((faq: any, index: any) => (
           <div
             key={index}
             className={`${
               index !== faqs.length - 1 ? "border-b border-gray-200" : ""
-            } pb-4 transition duration-300 ease-in-out`}
+            } pb-1 transition duration-300 ease-in-out`}
           >
             <button
               className="flex justify-between items-center w-full text-left text-gray-800 font-semibold text-lg focus:outline-none"

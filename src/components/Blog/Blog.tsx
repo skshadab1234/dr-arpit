@@ -41,13 +41,13 @@ const BlogPostComponent = ({
             <a
               href={`/patients-education/${post.slug}`}
               title={post.title}
-              className="text-[#232c77] hover:text-gray-600"
+              className="text-[#232c77] hover:text-black"
             >
               {post.title}
             </a>
           </h3>
           <p
-            className="text-gray-700 mb-4 line-clamp-3 text-left"
+            className=" mb-4 line-clamp-3 text-justify text-black"
             dangerouslySetInnerHTML={{ __html: post.description }}
           ></p>
           <a

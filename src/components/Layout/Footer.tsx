@@ -71,7 +71,7 @@ const Footer = () => {
           <div>
             <img className="w-60" src={logo.src} alt="Dr Arpit Bansal" />
 
-            <p className="mt-5 text-base font-medium text-left">
+            <p className="mt-5 text-base font-medium text-justify text-[#000]">
               Dr. Arpit Bansal, an Advanced Laparoscopy and Cancer Surgeon, has
               mastered an art, which many struggle to understand.
             </p>
@@ -90,9 +90,9 @@ const Footer = () => {
           {/* Speciality Section */}
           <div className="grid grid-cols-1 gap-5 px-3 lg:px-10 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-3">
             <div className="space-y-2">
-              <p className="font-bold text-xl">His Speciality</p>
+              <p className="font-bold text-xl text-black">His Speciality</p>
               <div className="w-20 h-0.5 bg-primary rounded-full"></div>
-              <ul className="flex flex-col mt-4 space-y-2 text-base">
+              <ul className="flex flex-col mt-4 space-y-2 text-base text-black">
                 {treatments.slice(0, 7).map((treatment) => (
                   <li key={treatment.id}>
                     <Link
@@ -109,9 +109,9 @@ const Footer = () => {
 
             {/* Quick Links Section */}
             <div className="space-y-2">
-              <p className="font-bold text-xl">Quick Links</p>
+              <p className="font-bold text-xl text-black">Quick Links</p>
               <div className="w-20 h-0.5 bg-primary rounded-full"></div>
-              <ul className="flex flex-col mt-4 space-y-2 text-base">
+              <ul className="flex flex-col mt-4 space-y-2 text-base text-black">
                 <li>
                   <Link
                     className="flex items-center hover:text-primary gap-1 hover:ml-1 duration-200"
@@ -180,10 +180,10 @@ const Footer = () => {
 
             {/* Contact Info Section */}
             <div className="space-y-2">
-              <p className="font-bold text-xl">Contact Info</p>
+              <p className="font-bold text-xl text-black">Contact Info</p>
               <div className="w-20 h-0.5 bg-primary rounded-full"></div>
-              <div className="space-y-3 mt-4 text-sm">
-                <div className="flex items-start gap-2">
+              <div className="space-y-3 mt-4 text-base text-black">
+                <div className="flex items-start gap-2 ">
                   <div className="flex-shrink-0">
                     <MapPin
                       size={20}

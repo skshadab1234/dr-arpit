@@ -10,10 +10,14 @@ const AboutArpit = () => {
           >
             <div className="relative">
               <img
+                style={{
+                  boxShadow:
+                    "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
+                }}
                 src={gallery1.src}
                 alt="Profile"
                 // className="w-full h-full -mt-12  relative z-20"
-                className="w-96 scale-x-[-1]"
+                className="w-[500px] border-2 border-solid border-[#fff] rounded-md px-20 scale-x-[-1]"
               />
               {/* <div className="absolute w-80 md:w-96 h-[380px] md:h-[450px] bg-gray-300 -top-8 -right-8 rounded-lg border-b-4 border-[#171f56]"></div>
               <div className="absolute w-16 h-16 bg-[#171f56] -top-4 -right-4 rounded-lg"></div> */}
@@ -35,7 +39,7 @@ const AboutArpit = () => {
             <span className="text-xl mt-0 lg:mt-2 mb-2 font-semibold">
               MBBS | MS | FACS | FMAS | FCS | FIBC
             </span>
-            <p className="text-lg text-[#444] my-4 mb-10 text-left font-normal">
+            <p className="text-lg text-[#000] my-4 mb-10 text-justify font-normal">
               I am Arpit Bansal, a doctor, specialized in advanced laparoscopic,
               cancer, and laser surgery. With a Fellowship from the UK, i am
               future-ready for robotic surgeries. I have trained under some of

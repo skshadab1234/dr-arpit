@@ -66,7 +66,7 @@ const BlogLatest = ({ params }: any) => {
               </a>
               <div className="flex-1">
                 <h5
-                  className={`text-md lg:text-lg font-bold ${
+                  className={`text-md lg:text-lg font-[500] ${
                     params === disease.slug ? "text-[#232c77]" : "text-black"
                   }`}
                 >

@@ -77,7 +77,7 @@ const AboutHome = () => {
             {/* <span className="text-xl mt-0 lg:mt-2 mb-2">
               MBBS, MS - General Surgery
             </span> */}
-            <p className="text-lg text-[#444] my-4 text-left font-normal">
+            <p className="text-lg text-[#000] my-4 text-justify font-normal">
               I am Arpit Bansal, a doctor, specialized in advanced laparoscopic,
               cancer, and laser surgery. With a Fellowship from the UK, i am
               future-ready for robotic surgeries. I have trained under some of
@@ -87,12 +87,12 @@ const AboutHome = () => {
               edge technology, and treating the problem at it's root, which is
               your lifestyle.
             </p>
-            <p className="text-lg text-[#444] my-4 text-left font-normal">
+            <p className="text-lg text-[#000] my-4 text-justify font-normal">
               As an experienced medical professional, I am passionate about
               leveraging social media, particularly through Instagram and
               YouTube, to spread vital health knowledge.
             </p>
-            <p className="text-lg text-[#444] my-4 text-left font-normal">
+            <p className="text-lg text-[#000] my-4 text-justify font-normal">
               I am on a quest to promote prevention, to treat disease at it's
               source, and to age healthily. No illness, happens in one day.
               Everyday is a chance to be your best self. The last 10 years of

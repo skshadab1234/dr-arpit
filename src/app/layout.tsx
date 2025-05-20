@@ -8,6 +8,7 @@ import Footer from "@/components/Layout/Footer";
 import FloatingAppointment from "@/components/Layout/FloatingAppointment";
 import FloatingButton from "@/components/Layout/FloatingButton";
 import metaImage from "@/assets/arpit.jpg";
+import ScrollToTop from "@/components/Layout/ScrollToTop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -129,6 +130,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <ScrollToTop />
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

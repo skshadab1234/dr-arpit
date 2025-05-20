@@ -92,7 +92,7 @@ const About = () => {
               {/* <span className="text-xl mt-0 lg:mt-2 mb-2">
                 MBBS, MS - General Surgery
               </span> */}
-              <p className="text-lg text-[#444] my-4 text-left font-normal">
+              <p className="text-lg text-[#000] my-4 text-justify font-normal">
                 Dr. Arpit Bansal, an Advanced Laparoscopy and Cancer Surgeon,
                 has mastered an art that many struggle to understand. As a
                 surgeon, he operates skilfully, doing his best to be his best.
@@ -101,7 +101,7 @@ const About = () => {
                 testament to his extraordinary talent and unyielding
                 determination.
               </p>
-              <p className="text-lg hidden xl:block text-[#444] mb-4 text-left font-normal">
+              <p className="text-lg hidden xl:block text-[#000] mb-4 text-justify font-normal">
                 Growing up in Prayagraj, Dr. Arpit Bansal always aspired to be a
                 doctor, owing to his empathetic nature. He is the Director of
                 the 200-bed NABH Accredited Multi-Specialty Jeevan Jyoti
@@ -119,7 +119,7 @@ const About = () => {
             }`}
             style={{ animationDelay: "1s" }}
           >
-            <p className="text-lg xl:hidden text-[#444] mb-4 text-left font-normal">
+            <p className="text-lg xl:hidden text-[#000] mb-4 text-justify font-normal">
               Growing up in Prayagraj, Dr. Arpit Bansal always aspired to be a
               doctor, owing to his empathetic nature. He is the Director of the
               200-bed NABH Accredited Multi-Specialty Jeevan Jyoti Hospital in
@@ -128,7 +128,7 @@ const About = () => {
               under some of the finest surgeons in India and has emerged as an
               iconic figure in the field of medicine.
             </p>
-            <p className="text-lg text-[#444] my-4 text-left font-normal">
+            <p className="text-lg text-[#000] my-4 text-justify font-normal">
               Dr. Bansal is also among the biggest names in wildlife bird
               photography, both in India and globally. Out of the 1,349 species
               of birds found in the country, Dr. Bansal has already captured
@@ -136,7 +136,7 @@ const About = () => {
               photographers who have accomplished this feat, placing him in 6th
               position on the world-famous website, www.Ebird.org.
             </p>
-            <p className="text-lg text-[#444] my-4 text-left font-normal">
+            <p className="text-lg text-[#000] my-4 text-justify font-normal">
               As a healthcare professional, Dr. Arpit Bansal is always focused
               on cures rather than merely treating symptoms. Interested in
               promoting lifestyle changes as a form of medicine, he launched his
@@ -146,7 +146,7 @@ const About = () => {
               His engagement with his followers is enviable.
             </p>
 
-            <p className="text-lg text-[#444] my-4 text-left font-normal">
+            <p className="text-lg text-[#000] my-4 text-justify font-normal">
               Dr. Arpit Bansal conducts Cancer Awareness Programmes, especially
               in schools and colleges, to educate the youth about the importance
               of the Cervical Cancer Vaccine. He was also a proactive voice in
@@ -156,7 +156,7 @@ const About = () => {
               Mother Earth.
             </p>
 
-            <p className="text-lg text-[#444] my-4 text-left font-normal">
+            <p className="text-lg text-[#000] my-4 text-justify font-normal">
               So captivated by the Blue Mind Movement, introduced by Dr. Wallace
               J. Nichols, Dr. Bansal took up the 100-day challenge to be in, on,
               near, or under water. He then launched the Blue Mind India
@@ -165,7 +165,7 @@ const About = () => {
               happily, and successfully.
             </p>
 
-            <p className="text-lg text-[#444] my-4 text-left font-normal">
+            <p className="text-lg text-[#000] my-4 text-justify font-normal">
               A TEDx speaker, a doctor committed to prevention and cure,
               meditative by nature, it's no wonder that Dr. Bansal is involved
               in longevity research, healthy aging, and stem cell advancements.
@@ -175,12 +175,12 @@ const About = () => {
               water in living to one's highest potential as a human being.
             </p>
 
-            <p className="text-lg text-[#444] my-4 text-left font-normal">
+            <p className="text-lg text-[#000] my-4 text-justify font-normal">
               An active runner, a tree saver, an underwater meditation and water
               enthusiast, Dr. Arpit Bansal embodies the Blue Mind philosophy
               24/7. He leads by example in both his profession and his passions.
             </p>
-            <p className="text-lg text-[#444] my-4 text-left font-normal">
+            <p className="text-lg text-[#000] my-4 text-justify font-normal">
               His future goals include expanding his work in longevity,
               functional medicine, robotic surgeries, and stem cell regenerative
               medicine. He also aims to spread awareness about gut health and

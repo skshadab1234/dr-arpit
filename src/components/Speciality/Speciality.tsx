@@ -146,7 +146,7 @@ const Speciality: React.FC<SpecialityProps> = ({ title, BreadTitle }: any) => {
               >
                 {decodeHtmlEntities(item.title)}
               </h5>
-              <div dangerouslySetInnerHTML={{ __html: item.description }} />
+              <div className="text-justify" dangerouslySetInnerHTML={{ __html: item.description }} />
             </div>
           </div>
         ))}

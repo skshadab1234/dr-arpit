@@ -18,10 +18,10 @@ import metaImage from "@/assets/arpit.jpg";
 import HomeFAQ from "@/components/About/HomeFAQ";
 
 export const metadata: Metadata = {
-  title: "Best Cancer Specialist in India | Top Oncologist | Dr Arpit Bansal",
+  title: "Best cancer specialist and oncologist in India | Dr arpit bansal",
   description:
     "Dr. Arpit Bansal is considered the best oncologist/cancer specialist. He has an expertise in laser treatment, and advance surgeries along with the experience of 10 years.",
-  keywords: "MBBS | MS | FACS | FMAS | FCS | FIBC",
+  keywords: "cancer specialist, best oncologist in india",
 
   // SEO meta tags
   authors: [{ name: "Dr. Arpit Bansal" }],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
   // Open Graph meta tags
   openGraph: {
-    title: "Dr. Arpit Bansal",
+    title: "Best cancer specialist and oncologist in India | Dr arpit bansal",
     description:
       "Dr. Arpit Bansal - MBBS, MS, FMAS, FCS and FIBC is one of the renowned & Advanced Laparoscopic & Onco Surgeon & Male Infertility consultant.",
     url: "https://drarpitbansal.in",

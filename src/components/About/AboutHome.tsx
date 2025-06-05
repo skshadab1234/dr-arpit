@@ -51,7 +51,7 @@ const AboutHome = () => {
             <div className="relative ">
               <img
                 src={gallery1.src}
-                alt="Profile"
+                alt="cancer specialist"
                 // className="w-full h-full -mt-12  relative z-20"
                 className="w-96 h-96 md:w-[500px] md:h-[500px] object-cover object-top -mt-12 lg:-mt-0 xl:-mt-12 relative z-20 "
               />
@@ -65,7 +65,10 @@ const AboutHome = () => {
               isInView ? "animate-fade-in-right" : "opacity-0"
             }`}
           >
-            <h1 className="text-3xl font-bold text-left mb-2 relative">
+            <h1 className="text-[#232c77] font-semibold mb-1 ml-2 uppercase  ">
+              Cancer Specialist
+            </h1>
+            <h2 className="text-3xl font-bold text-left mb-2 relative">
               <span
                 style={{ letterSpacing: "3px" }}
                 className="text-[#232c77] font-bold uppercase mainPrimary text-4xl lg:text-6xl"
@@ -73,7 +76,7 @@ const AboutHome = () => {
                 About Me
               </span>
               <div className="absolute top-0 right-0 w-10 h-7 bg-[#171f56] opacity-20 rotate-45"></div>
-            </h1>
+            </h2>
             {/* <span className="text-xl mt-0 lg:mt-2 mb-2">
               MBBS, MS - General Surgery
             </span> */}

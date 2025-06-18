@@ -75,8 +75,8 @@ const Footer = () => {
             <img className="w-60" src={logo.src} alt="Dr Arpit Bansal" />
 
             <p className="mt-5 text-base font-medium text-justify text-[#000]">
-              Dr. Arpit Bansal, an Advanced Laparoscopy and Cancer Surgeon, has
-              mastered an art, which many struggle to understand.
+              Dr. Arpit Bansal, an Advanced Laparoscopy and Cancer Specialist
+              Surgeon, has mastered an art, which many struggle to understand.
             </p>
             <div className="md:w-full flex justify-center items-center">
               <iframe

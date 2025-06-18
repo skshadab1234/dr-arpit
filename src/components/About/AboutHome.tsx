@@ -82,9 +82,9 @@ const AboutHome = () => {
             </span> */}
             <p className="text-lg text-[#000] my-4 text-justify font-normal">
               I am Arpit Bansal, a doctor, specialized in advanced laparoscopic,
-              cancer, and laser surgery. With a Fellowship from the UK, i am
-              future-ready for robotic surgeries. I have trained under some of
-              the finest surgeons in India. Combined with my role as the
+              cancer specialist, and laser surgery. With a Fellowship from the
+              UK, i am future-ready for robotic surgeries. I have trained under
+              some of the finest surgeons in India. Combined with my role as the
               Director of a 200-bed Multispecialty NABH Hospital in Prayagraj, i
               am uniquely positioned to deliver health that is based on cutting
               edge technology, and treating the problem at it's root, which is

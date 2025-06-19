@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import FAQ from "./FAQ";
 import Reviews from "./Reviews";
 import AboutArpit from "./AboutArpit";
+import Image from "next/image";
 
 // Define a more specific type for the treatment data
 interface Treatment {
@@ -129,7 +130,7 @@ const Speciality: React.FC<SpecialityProps> = ({ title, BreadTitle }: any) => {
             }`}
           >
             <div className="w-full lg:w-[47%] px-6 md:px-16 animate-fade-in-left">
-              <img
+              {/* <img
                 src={item.image}
                 alt={decodeHtmlEntities(item.title)}
                 className="w-full object-cover border-2 border-solid border-[#fff] rounded-md"
@@ -137,6 +138,13 @@ const Speciality: React.FC<SpecialityProps> = ({ title, BreadTitle }: any) => {
                   boxShadow:
                     "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px",
                 }}
+              /> */}
+              <Image
+                width={600} // Set an initial width (can be any value) to be responsive
+                height={600} // Set an initial height
+                className="w-full object-cover border-2 border-solid border-[#fff] rounded-md"
+                src={item.image}
+                alt={decodeHtmlEntities(item.title)}
               />
             </div>
             <div className="w-full lg:w-[47%] pt-5 lg:pt-0 flex flex-col justify-center px-5 space-y-3 lg:space-y-5 lg:-ml-20 animate-fade-in-right">
@@ -146,7 +154,10 @@ const Speciality: React.FC<SpecialityProps> = ({ title, BreadTitle }: any) => {
               >
                 {decodeHtmlEntities(item.title)}
               </h5>
-              <div className="text-justify" dangerouslySetInnerHTML={{ __html: item.description }} />
+              <div
+                className="text-justify"
+                dangerouslySetInnerHTML={{ __html: item.description }}
+              />
             </div>
           </div>
         ))}

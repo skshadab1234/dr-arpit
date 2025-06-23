@@ -91,7 +91,7 @@ const BlogSingle = ({ params, BlogData }: any) => {
             <div>
               <img
                 className="w-full rounded-md"
-                alt={blog.title}
+                alt={blog.image_alt}
                 src={blog.image}
                 onClick={blog.video_link ? openModal : closeModal}
               />

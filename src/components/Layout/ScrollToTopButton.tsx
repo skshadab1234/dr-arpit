@@ -3,19 +3,23 @@ import React, { useState, useEffect } from 'react';
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
-
-  const handleScroll = () => {
-    setIsVisible(window.scrollY > 20);
-  };
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
-    // Run once on mount to ensure proper visibility
+    const handleScroll = () => {
+      setIsVisible(window.scrollY > 20);
+    };
+
+    // Ensure we are mounted before checking scroll position
+    setHasMounted(true);
     handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  if (!isVisible) return null;
+  // Avoid rendering until component has mounted (fixes flash on first paint)
+  if (!hasMounted || !isVisible) return null;
 
   return (
     <button

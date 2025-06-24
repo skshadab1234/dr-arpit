@@ -1,11 +1,11 @@
-'use client'
+'use client';
 import React, { useState, useEffect } from 'react';
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
   const handleScroll = () => {
-    if (window.scrollY > 300) {
+    if (window.scrollY > 20) {
       setIsVisible(true);
     } else {
       setIsVisible(false);

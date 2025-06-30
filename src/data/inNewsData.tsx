@@ -19,29 +19,32 @@ import news14 from "@/assets/images/innews/22.png";
 import news15 from "@/assets/images/innews/23.png";
 import news16 from "@/assets/images/innews/24.png";
 import news17 from "@/assets/images/innews/blueverve.png";
+import news18 from "@/assets/images/innews/sugermint.png";
 
 const inNewsDatas = [
   { id: 1, image: newData1, heading: "News 1" },
   { id: 2, image: newData2, heading: "News 2" },
   { id: 3, image: newData3, heading: "News 3" },
-  { id: 4, image: news4, heading: "News 4" },
+  { id: 4, image: news8, heading: "News 8" },
   { id: 5, image: news5, heading: "News 5" },
-  { id: 1, image: article, heading: "article" },
-  { id: 1, image: news17, heading: "blueverve" },
-  { id: 6, image: news6, heading: "News 6" },
-  { id: 7, image: news7, heading: "News 7" },
-  { id: 8, image: news8, heading: "News 8" },
-  { id: 9, image: news9, heading: "News 9" },
-  { id: 10, image: news10, heading: "News 10" },
-  { id: 11, image: news11, heading: "News 11" },
-  { id: 12, image: news12, heading: "News 12" },
-  { id: 13, image: news13, heading: "News 13" },
-  { id: 14, image: news14, heading: "News 14" },
-  { id: 15, image: news15, heading: "News 15" },
-  { id: 16, image: news16, heading: "News 16" },
-  { id: 17, image: news1, heading: "News 1" },
-  { id: 18, image: news2, heading: "News 2" },
-  { id: 19, image: news3, heading: "News 3" },
+  { id: 6, image: article, heading: "article" },
+  { id: 8, image: news18, heading: "sugermint" },
+  { id: 7, image: news17, heading: "blueverve" },
+  { id: 9, image: news6, heading: "News 6" },
+  { id: 10, image: news7, heading: "News 7" },
+  { id: 11, image: news4, heading: "News 4" },
+  { id: 12, image: news9, heading: "News 9" },
+  { id: 13, image: news10, heading: "News 10" },
+  { id: 14, image: news11, heading: "News 11" },
+  { id: 15, image: news12, heading: "News 12" },
+  { id: 16, image: news13, heading: "News 13" },
+  { id: 17, image: news14, heading: "News 14" },
+  { id: 18, image: news15, heading: "News 15" },
+  { id: 19, image: news16, heading: "News 16" },
+  { id: 20, image: news1, heading: "News 1" },
+  { id: 21, image: news2, heading: "News 2" },
+  { id: 22, image: news3, heading: "News 3" },
+  { id: 23, image: news12, heading: "News 12" },
 ];
 
 export default inNewsDatas;

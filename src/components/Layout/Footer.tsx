@@ -17,9 +17,6 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [treatments, setTreatments] = useState<Treatment[]>([]);
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
   useEffect(() => {
     const fetchTreatments = async () => {
       try {
@@ -298,12 +295,6 @@ const Footer = () => {
           </a>
         </p>
       </div>
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-4 left-4 p-3 bg-[#232c77] text-white rounded-full shadow-md z-50"
-      >
-        ↑
-      </button>
     </footer>
   );
 };

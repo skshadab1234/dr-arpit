@@ -9,6 +9,7 @@ import FloatingAppointment from "@/components/Layout/FloatingAppointment";
 import FloatingButton from "@/components/Layout/FloatingButton";
 import metaImage from "@/assets/arpit.jpg";
 import ScrollToTop from "@/components/Layout/ScrollToTop";
+import ScreenTop from "@/components/Layout/ScreenTop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -86,6 +87,43 @@ export default function RootLayout({
             }),
           }}
         />
+        <Script
+          id="faq-json-ld"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: [
+                {
+                  "@type": "Question",
+                  name: "What is advanced laparoscopic surgery?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "Advanced laparoscopic surgery is a minimally invasive technique that uses small incisions and a camera to perform complex procedures. It results in faster recovery, reduced pain, and minimal scarring.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "When do I need an oncologist?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "You should consult an oncologist if you’ve been diagnosed with cancer or notice symptoms like unexplained lumps, weight loss, or persistent pain. An oncologist specializes in diagnosing and treating cancer effectively.",
+                  },
+                },
+                {
+                  "@type": "Question",
+                  name: "Who is the best oncologist in India?",
+                  acceptedAnswer: {
+                    "@type": "Answer",
+                    text: "India has many leading cancer specialists. Dr. Arpit Bansal is considered one of the best oncologists in India, known for his expertise in surgical oncology and personalized cancer care.",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
 
         <Script
           id="json-ld-person-script"
@@ -130,7 +168,7 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -141,9 +179,9 @@ export default function RootLayout({
           ></iframe>
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-
         <Announcement />
         <NewHeader />
+        <ScreenTop />
         {children}
         <FloatingAppointment />
         <FloatingButton />

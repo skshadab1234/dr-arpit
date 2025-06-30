@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: "Best cancer specialist and oncologist in India | Dr arpit bansal",
   description:
     "Dr. Arpit Bansal is considered the best oncologist/cancer specialist. He has an expertise in laser treatment, and advance surgeries along with the experience of 10 years.",
-  keywords: "cancer specialist, best oncologist in india",
+  keywords: "cancer specialist, best oncologist in india, advanced laparoscopic surgery",
 
   // SEO meta tags
   authors: [{ name: "Dr. Arpit Bansal" }],

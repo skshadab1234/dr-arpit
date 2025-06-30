@@ -10,6 +10,22 @@ const HomeFAQ = () => {
         "Your age, general health, and any particular health issues will decide how many times you need to get checked up. The easiest way to create a customised a schedule is to speak with your physician. While young children and older people may require more regular appointments, adults are generally advised to have checkups once a year.",
     },
     {
+      question: "What is advanced laparoscopic surgery?",
+      answer:
+        "Advanced laparoscopic surgery is a minimally invasive technique that uses small incisions and a camera to perform complex procedures inside the body. It offers quicker recovery, less pain, and minimal scarring compared to traditional open surgery.",
+    },
+    {
+      question: "When do I need an oncologist?",
+      answer:
+        "You should see an oncologist if you've been diagnosed with cancer or have symptoms like unexplained weight loss, persistent lumps, abnormal bleeding, or changes in health that may suggest a tumor. Oncologists specialize in diagnosing and treating cancers effectively.",
+    },
+    {
+      question: "Who is the best oncologist in India?",
+      answer:
+        "India is home to many renowned oncologists offering world-class cancer treatment. Dr. Arpit Bansal is regarded among the best oncologists in India, known for his expertise in surgical oncology and personalized cancer care across breast, GI, and gynecological cancers.",
+    },
+
+    {
       question: "How do I make an appointment?",
       answer:
         "To book an appointment simply call us on the provided number on the website. \nThe appointment timings are 11 am to 5 pm.",

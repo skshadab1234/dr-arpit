@@ -66,7 +66,7 @@ const AboutHome = () => {
             }`}
           >
             <h1 className="text-[#232c77] font-semibold mb-1 ml-2 uppercase text-lg">
-              Cancer Specialist
+            Best Oncologist in India
             </h1>
             <h2 className="text-3xl font-bold text-left mb-2 relative">
               <span

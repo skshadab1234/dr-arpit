@@ -1,23 +1,16 @@
 import AboutHome from "@/components/About/AboutHome";
-import China from "@/components/About/China";
 import Features from "@/components/About/Features";
 import LogoCarousel from "@/components/About/LogoCarousel";
-import Passion from "@/components/About/Passion";
-import Sample from "@/components/About/Sample";
 import SpecialityComp from "@/components/About/SpecialityComp";
-import SpecialityCompOld from "@/components/About/SpecialityCompOld";
 import Blog from "@/components/Blog/Blog";
 import RequestAppointment from "@/components/Contact/RequestAppointment";
 import Slider from "@/components/Home/Slider";
 import GoogleFeed from "@/components/InstagramFeed/GoogleFeed";
 import InstaFeed from "@/components/InstagramFeed/InstaFeed";
-import FloatingAppointment from "@/components/Layout/FloatingAppointment";
-import Treatments from "@/components/Treatments/Treatments";
 import { Metadata } from "next";
 import metaImage from "@/assets/arpit.jpg";
 import HomeFAQ from "@/components/About/HomeFAQ";
 import Head from "next/head";
-import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Best oncologist in India | Dr arpit bansal",
@@ -67,26 +60,21 @@ export default function Home() {
   return (
     <>
       <Head>
-        {/* Google Tag Manager */}
-        <Script
+        {/* ✅ Google Tag Manager */}
+        <script
           id="gtm-script"
-          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: `
-              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-NXXVRT92');
-            `,
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-NXXVRT92');`,
           }}
         />
-        {/* End Google Tag Manager */}
 
-        <Script
-          id="json-ld-script"
+        {/* ✅ DiagnosticLab JSON-LD */}
+        <script
           type="application/ld+json"
-          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -111,10 +99,10 @@ export default function Home() {
             }),
           }}
         />
-        <Script
-          id="faq-json-ld"
+
+        {/* ✅ FAQ JSON-LD */}
+        <script
           type="application/ld+json"
-          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -149,10 +137,9 @@ export default function Home() {
           }}
         />
 
-        <Script
-          id="json-ld-person-script"
+        {/* ✅ Person JSON-LD */}
+        <script
           type="application/ld+json"
-          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org/",
@@ -191,6 +178,7 @@ export default function Home() {
           }}
         />
       </Head>
+
       <Slider />
       <AboutHome />
       <SpecialityComp />

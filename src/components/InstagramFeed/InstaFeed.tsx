@@ -38,7 +38,7 @@ const InstaFeed: React.FC = () => {
   return (
     <div
       ref={sectionRef}
-      className={`p-5 md:p-10 lg:p-16 bg-white ${
+      className={`p-5 md:p-10 lg:p-16 pb-0 bg-white ${
         isInView ? "animate__animated animate__fadeInRight" : ""
       }`}
       style={{

@@ -25,6 +25,19 @@ const BlogSingleSkeleton = () => (
     </div>
   </div>
 );
+function extractJsonLd(schema: string): string[] {
+  const matches = schema.match(
+    /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi
+  );
+  if (!matches) return [];
+
+  return matches.map((script) => {
+    const match = script.match(
+      /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/i
+    );
+    return match ? match[1].trim() : "";
+  });
+}
 
 const BlogSingle = ({ params, BlogData }: any) => {
   const bg = "./white bg.png";
@@ -60,7 +73,7 @@ const BlogSingle = ({ params, BlogData }: any) => {
   if (loading) {
     return <BlogSingleSkeleton />;
   }
-
+  const jsonLdArray = extractJsonLd(blog.schema);
   return (
     <>
       {" "}
@@ -78,13 +91,13 @@ const BlogSingle = ({ params, BlogData }: any) => {
           rel="canonical"
           href={`https://drarpitbansal.in/patients-education/${blog.slug}`}
         />
-
-        {blog.schema && (
-          <div
-            dangerouslySetInnerHTML={{ __html: blog.schema }}
-            suppressHydrationWarning
+        {jsonLdArray.map((json, index) => (
+          <script
+            key={index}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: json }}
           />
-        )}
+        ))}
       </head>
       <div
         style={{

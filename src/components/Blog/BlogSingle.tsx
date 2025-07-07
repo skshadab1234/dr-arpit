@@ -79,7 +79,9 @@ const BlogSingle = ({ params, BlogData }: any) => {
           href={`https://drarpitbansal.in/patients-education/${blog.slug}`}
         />
 
-        {blog.schema}
+        {blog.schema && (
+          <div dangerouslySetInnerHTML={{ __html: blog.schema }} />
+        )}
       </head>
       <div
         style={{

@@ -80,7 +80,10 @@ const BlogSingle = ({ params, BlogData }: any) => {
         />
 
         {blog.schema && (
-          <div dangerouslySetInnerHTML={{ __html: blog.schema }} />
+          <div
+            dangerouslySetInnerHTML={{ __html: blog.schema }}
+            suppressHydrationWarning
+          />
         )}
       </head>
       <div

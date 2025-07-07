@@ -84,10 +84,9 @@ const AboutHome = () => {
             <p className="text-lg text-[#000] my-4 text-justify font-normal">
               I am Arpit Bansal, a doctor, specialized in advanced laparoscopic,
               <Link
-                className="text-[#232c77]"
+                className="text-[#232c77] font-semibold"
                 href="https://drarpitbansal.in/speciality/best-cancer-treatment-in-india"
               >
-                {" "}
                 cancer specialist{" "}
               </Link>
               , and laser surgery. With a Fellowship from the UK, i am

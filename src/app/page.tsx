@@ -161,7 +161,7 @@ export default function Home() {
       <Blog title="home" />
       <Features />
       <InstaFeed />
-      <GoogleFeed />
+      {/* <GoogleFeed /> */}
       <LogoCarousel />
       <RequestAppointment />
       <HomeFAQ />

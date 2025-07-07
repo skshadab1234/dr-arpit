@@ -62,87 +62,91 @@ const BlogSingle = ({ params, BlogData }: any) => {
   }
 
   return (
-    <>  <head>
-    <title>{blog.meta_title || "Default Page Title"}</title>
-    <meta
-      name="description"
-      content={
-        blog.meta_description || "Default description for the page."
-      }
-    />
-    <meta
-      name="keywords"
-      content={blog.meta_keyword || "default, keywords, here"}
-    />
-    <link rel="canonical" href={`https://drarpitbansal.in/patients-education/${blog.slug}`} />
+    <>
+      {" "}
+      <head>
+        <title>{blog.meta_title || "Default Page Title"}</title>
+        <meta
+          name="description"
+          content={blog.meta_description || "Default description for the page."}
+        />
+        <meta
+          name="keywords"
+          content={blog.meta_keyword || "default, keywords, here"}
+        />
+        <link
+          rel="canonical"
+          href={`https://drarpitbansal.in/patients-education/${blog.slug}`}
+        />
 
-  </head>
-    <div
-      style={{
-        backgroundImage: `url('${bg}')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-      className="container py-16 mx-auto p-4 grid grid-cols-1 md:grid-cols-3 gap-4"
-    >
-      <div className="content-area col-span-2">
-        <div className="type-post mb-6 bg-white shadow-md p-4 rounded-md">
-          <div className="entry-cover relative">
-            <div>
-              <img
-                className="w-full rounded-md"
-                alt={blog.image_alt}
-                src={blog.image}
-                onClick={blog.video_link ? openModal : closeModal}
-              />
-            </div>
-            {/* Modal component */}
-            <Modal
-              open={isModalOpen}
-              onCancel={closeModal} // Close modal and clear video
-              title={<p className="py-3 px-2">{blog.title}</p>} // Use blog.title directly, not setVideo
-              className="modal"
-              centered
-              width={700}
-              footer={null} // Remove footer
-            >
-              {videoSrc ? (
-                <iframe
-                  width="100%"
-                  height="400"
-                  src={videoSrc}
-                  title={blog.title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              ) : (
-                <p>No video available</p>
-              )}
-            </Modal>
-            {/* <div className="post-date-bg absolute top-2 left-2 bg-blue-600 text-white rounded-md p-2">
+        {blog.schema}
+      </head>
+      <div
+        style={{
+          backgroundImage: `url('${bg}')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        className="container py-16 mx-auto p-4 grid grid-cols-1 md:grid-cols-3 gap-4"
+      >
+        <div className="content-area col-span-2">
+          <div className="type-post mb-6 bg-white shadow-md p-4 rounded-md">
+            <div className="entry-cover relative">
+              <div>
+                <img
+                  className="w-full rounded-md"
+                  alt={blog.image_alt}
+                  src={blog.image}
+                  onClick={blog.video_link ? openModal : closeModal}
+                />
+              </div>
+              {/* Modal component */}
+              <Modal
+                open={isModalOpen}
+                onCancel={closeModal} // Close modal and clear video
+                title={<p className="py-3 px-2">{blog.title}</p>} // Use blog.title directly, not setVideo
+                className="modal"
+                centered
+                width={700}
+                footer={null} // Remove footer
+              >
+                {videoSrc ? (
+                  <iframe
+                    width="100%"
+                    height="400"
+                    src={videoSrc}
+                    title={blog.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                ) : (
+                  <p>No video available</p>
+                )}
+              </Modal>
+              {/* <div className="post-date-bg absolute top-2 left-2 bg-blue-600 text-white rounded-md p-2">
               <div className="post-date text-center">
                 <span>{new Date().toLocaleDateString()}</span>
               </div>
             </div> */}
-          </div>
-          <div className="latest-news-content mt-4">
-            <div className="entry-header">
-              <h3 className="entry-title text-xl font-bold">{blog.title}</h3>
             </div>
-            <div className="entry-content mt-2">
-              <div
-                className="text-black text-justify mb-2"
-                dangerouslySetInnerHTML={{ __html: blog.description }}
-              />
+            <div className="latest-news-content mt-4">
+              <div className="entry-header">
+                <h3 className="entry-title text-xl font-bold">{blog.title}</h3>
+              </div>
+              <div className="entry-content mt-2">
+                <div
+                  className="text-black text-justify mb-2"
+                  dangerouslySetInnerHTML={{ __html: blog.description }}
+                />
+              </div>
             </div>
           </div>
         </div>
+        <div className="widget-area">
+          <BlogLatest params={params} />
+        </div>
       </div>
-      <div className="widget-area">
-        <BlogLatest params={params} />
-      </div>
-    </div>
     </>
   );
 };

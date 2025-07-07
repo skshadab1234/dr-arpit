@@ -17,9 +17,7 @@ const PatientsEducationDetail = async ({ params }: any) => {
     title: `${blog.meta_title} | Dr. Arpit Bansal`,
     description: blog.meta_description,
     keywords: blog.meta_keyword,
-    authors: [
-      { name: "Dr. Arpit Bansal"},
-    ],
+    authors: [{ name: "Dr. Arpit Bansal" }],
     robots: "index, follow",
     publisher: "Dr. Arpit Bansal",
     alternates: {
@@ -60,6 +58,5 @@ const PatientsEducationDetail = async ({ params }: any) => {
     </>
   );
 };
-
 
 export default PatientsEducationDetail;

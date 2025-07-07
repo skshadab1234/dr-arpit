@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import gallery1 from "@/assets/images/gallery/270.png";
+import Link from "next/link";
 
 const AboutHome = () => {
   const bg = "./white bg.png";
@@ -51,7 +52,7 @@ const AboutHome = () => {
             <div className="relative ">
               <img
                 src={gallery1.src}
-                alt="cancer specialist"
+                alt="Best oncologist in India"
                 // className="w-full h-full -mt-12  relative z-20"
                 className="w-96 h-96 md:w-[500px] md:h-[500px] object-cover object-top -mt-12 lg:-mt-0 xl:-mt-12 relative z-20 "
               />
@@ -66,7 +67,7 @@ const AboutHome = () => {
             }`}
           >
             <h1 className="text-[#232c77] font-semibold mb-1 ml-2 uppercase text-lg">
-            Best Oncologist in India
+              Best Oncologist in India
             </h1>
             <h2 className="text-3xl font-bold text-left mb-2 relative">
               <span
@@ -82,9 +83,16 @@ const AboutHome = () => {
             </span> */}
             <p className="text-lg text-[#000] my-4 text-justify font-normal">
               I am Arpit Bansal, a doctor, specialized in advanced laparoscopic,
-              cancer specialist, and laser surgery. With a Fellowship from the
-              UK, i am future-ready for robotic surgeries. I have trained under
-              some of the finest surgeons in India. Combined with my role as the
+              <Link
+                className="text-[#232c77]"
+                href="https://drarpitbansal.in/speciality/best-cancer-treatment-in-india"
+              >
+                {" "}
+                cancer specialist{" "}
+              </Link>
+              , and laser surgery. With a Fellowship from the UK, i am
+              future-ready for robotic surgeries. I have trained under some of
+              the finest surgeons in India. Combined with my role as the
               Director of a 200-bed Multispecialty NABH Hospital in Prayagraj, i
               am uniquely positioned to deliver health that is based on cutting
               edge technology, and treating the problem at it's root, which is

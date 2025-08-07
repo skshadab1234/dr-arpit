@@ -42,7 +42,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
+      <head>
+      <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=SJ7B7X390R`}
+        ></Script>
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-SJ7B7X390R');
+          `}
+        </Script>
+      </head>
       <body className={inter.className}>
         {/* <ScrollToTop /> */}
         {/* Google Tag Manager (noscript) */}

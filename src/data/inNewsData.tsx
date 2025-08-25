@@ -20,6 +20,7 @@ import news15 from "@/assets/images/innews/23.png";
 import news16 from "@/assets/images/innews/24.png";
 import news17 from "@/assets/images/innews/blueverve.png";
 import news18 from "@/assets/images/innews/sugermint.png";
+import news19 from "@/assets/images/innews/news-image.png";
 
 const inNewsDatas = [
   { id: 1, image: newData1, heading: "News 1" },
@@ -45,6 +46,7 @@ const inNewsDatas = [
   { id: 21, image: news2, heading: "News 2" },
   { id: 22, image: news3, heading: "News 3" },
   { id: 23, image: news12, heading: "News 12" },
+  { id: 24, image: news19, heading: "News 19" },
 ];
 
 export default inNewsDatas;

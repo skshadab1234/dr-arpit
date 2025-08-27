@@ -77,7 +77,7 @@ const InNews = () => {
           In News
         </h5>
 
-        <div className="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-8 md:grid-cols-3 lg:grid-cols-4 [&>img:not(:first-child)]:mt-8">
           {inNewsDatas.map((item) => (
             <ImageItem key={item.id} item={item} />
           ))}
@@ -89,7 +89,10 @@ const InNews = () => {
           className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50"
           onClick={closeModal}
         >
-          <div className="relative w-full lg:w-1/3" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="relative w-full lg:w-1/3"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={closeModal}
               className="absolute top-2 right-2 text-white bg-white p-2 rounded-full"

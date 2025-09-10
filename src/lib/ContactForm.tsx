@@ -11,7 +11,7 @@ export const sendContactForm = async (
 ) => {
   try {
     await sendmail({
-      to: "info.team.website@gmail.com",
+      to: ["info.team.website@gmail.com", "seo@sagartech.co.in"],
       name: name,
       subject: "Contact Form Submission From Dr Arpit Bansal",
       body: `

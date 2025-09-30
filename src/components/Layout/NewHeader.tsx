@@ -16,6 +16,21 @@ interface SubMenuItem {
   url: string;
 }
 
+// Types for fetched data
+interface Treatment {
+  id: number;
+  image: string;
+  title: string;
+  description: string;
+  slug: string;
+}
+
+interface Disease {
+  id: number;
+  title: string;
+  slug: string;
+}
+
 const SocialIcons = () => {
   return (
     <div className="flex space-x-4">
@@ -32,11 +47,8 @@ const SocialIcons = () => {
   );
 };
 
-const NewHeader = () => {
+const NewHeader = ({ treatments, diseases }: { treatments: Treatment[]; diseases: Disease[] }) => {
   const [mobileMenu, setMobileMenu] = useState(false);
-  const [showCatMenu, setShowCatMenu] = useState(false);
-  const [showContactMenu, setShowContactMenu] = useState(false);
-  const [subMenuData, setSubMenuData] = useState<SubMenuItem[] | null>(null);
   const [showSearch, setShowSearch] = useState(false);
   const divRef = useRef<HTMLDivElement | null>(null);
 
@@ -89,6 +101,7 @@ const NewHeader = () => {
     };
   }, [mobileMenu]);
 
+
   return (
     <header
       className={`${headerClass} w-full px-5 py-10 xl:px-8 h-[8svh] block lg:flex items-center justify-between transition-transform duration-300`}
@@ -98,22 +111,15 @@ const NewHeader = () => {
       </Link>
 
       <Menu
-        showCatMenu={showCatMenu}
-        setShowCatMenu={setShowCatMenu}
-        showContactMenu={showContactMenu}
-        setShowContactMenu={setShowContactMenu}
-        subMenuData={subMenuData || []} // Ensure it's always an array
-        contactData={[]} // Provide default empty array if not used
+        treatments={treatments}
+        diseases={diseases}
       />
 
       {mobileMenu && (
         <MenuMobile
-          subMenuData={subMenuData || []}
-          showCatMenu={showCatMenu}
-          showContactMenu={showContactMenu}
-          setShowCatMenu={setShowCatMenu}
-          setShowContactMenu={setShowContactMenu}
           setMobileMenu={setMobileMenu}
+          treatments={treatments}
+          diseases={diseases}
         />
       )}
 

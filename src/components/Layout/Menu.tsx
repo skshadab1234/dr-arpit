@@ -2,7 +2,7 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 // Define types for props
 interface SubMenuItem {
@@ -15,12 +15,8 @@ interface ContactItem {
 }
 
 interface MenuProps {
-  showCatMenu: boolean;
-  setShowCatMenu: React.Dispatch<React.SetStateAction<boolean>>;
-  subMenuData: SubMenuItem[];
-  contactData: ContactItem[];
-  setShowContactMenu: React.Dispatch<React.SetStateAction<boolean>>;
-  showContactMenu: boolean;
+  treatments: Treatment[];
+  diseases: Disease[];
 }
 
 interface Treatment {
@@ -38,63 +34,13 @@ interface Disease {
 }
 
 const Menu: React.FC<MenuProps> = ({
-  showCatMenu,
-  setShowCatMenu,
-  subMenuData = [],
-  contactData = [],
-  setShowContactMenu,
-  showContactMenu,
+  treatments,
+  diseases,
 }) => {
   const path = usePathname();
-  const [treatments, setTreatments] = useState<Treatment[]>([]);
-  const [diseases, setDiseases] = useState<Disease[]>([]); // State for diseases
   const [showSpecialityMenu, setShowSpecialityMenu] = useState(false);
   const [showPatientsEducationMenu, setShowPatientsEducationMenu] =
     useState(false);
-
-  // Fetch treatments from API
-  useEffect(() => {
-    const fetchTreatments = async () => {
-      try {
-        const response = await fetch(
-          `${process.env.BACKEND}/getAllTreatments?per_page=1000`
-        );
-        const data = await response.json();
-
-        if (data?.treatments && Array.isArray(data.treatments)) {
-          setTreatments(data.treatments);
-        } else {
-          console.error("Unexpected data format:", data);
-        }
-      } catch (error) {
-        console.error("Error fetching treatments:", error);
-      }
-    };
-
-    fetchTreatments();
-  }, []);
-
-  // Fetch diseases from API
-  useEffect(() => {
-    const fetchDiseases = async () => {
-      try {
-        const response = await fetch(
-          `${process.env.BACKEND}/diseases?per_page=1000`
-        );
-        const data = await response.json();
-
-        if (data?.diseases && Array.isArray(data?.diseases)) {
-          setDiseases(data?.diseases);
-        } else {
-          console.error("Unexpected data format:", data);
-        }
-      } catch (error) {
-        console.error("Error fetching diseases:", error);
-      }
-    };
-
-    fetchDiseases();
-  }, []);
 
   const data = [
     {
@@ -152,11 +98,10 @@ const Menu: React.FC<MenuProps> = ({
           return (
             <React.Fragment key={item.id}>
               <li
-                className={`relative cursor-pointer text-base hover:border-b-2 typetext hover:border-[#00008b] hover:text-primary hover:text-[#171f58] lg:text-xs xl:text-base transition-all ease-in-out duration-500 ${
-                  isActive
+                className={`relative cursor-pointer text-base hover:border-b-2 typetext hover:border-[#00008b] hover:text-primary hover:text-[#171f58] lg:text-xs xl:text-base transition-all ease-in-out duration-500 ${isActive
                     ? "border-primary border-b-2 font-semibold border-[#00008b] text-primary text-[#171f58]"
                     : "border-transparent hover:text-primary group"
-                } pb-1`}
+                  } pb-1`}
                 onMouseEnter={() =>
                   item.hasDropdown &&
                   (item.name === "His Speciality"
@@ -220,11 +165,10 @@ const Menu: React.FC<MenuProps> = ({
                   )}
 
                 <span
-                  className={`absolute bottom-0 left-1/2 h-[2px] bg-primary transition-all ease-in-out duration-500 transform ${
-                    isActive
+                  className={`absolute bottom-0 left-1/2 h-[2px] bg-primary transition-all ease-in-out duration-500 transform ${isActive
                       ? "w-full -translate-x-1/2"
                       : "w-0 group-hover:w-full"
-                  }`}
+                    }`}
                 ></span>
               </li>
             </React.Fragment>

@@ -13,30 +13,8 @@ interface Treatment {
   slug: string;
 }
 
-const Footer = () => {
+const Footer = ({ treatments }: { treatments: Treatment[] }) => {
   const currentYear = new Date().getFullYear();
-  const [treatments, setTreatments] = useState<Treatment[]>([]);
-
-  useEffect(() => {
-    const fetchTreatments = async () => {
-      try {
-        const response = await fetch(
-          `${process.env.BACKEND}/getAllTreatments?per_page=1000`
-        );
-        const data = await response.json();
-
-        if (data?.treatments && Array.isArray(data.treatments)) {
-          setTreatments(data.treatments);
-        } else {
-          console.error("Unexpected data format:", data);
-        }
-      } catch (error) {
-        console.error("Error fetching treatments:", error);
-      }
-    };
-
-    fetchTreatments();
-  }, []);
 
   // useEffect(() => {
   //   // Define the Tawk API and load start time

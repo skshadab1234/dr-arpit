@@ -1,7 +1,7 @@
 "use client";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 // Define types for props
 interface SubMenuItem {
@@ -11,12 +11,9 @@ interface SubMenuItem {
 }
 
 interface MenuMobileProps {
-  showCatMenu: boolean;
-  setShowCatMenu: React.Dispatch<React.SetStateAction<boolean>>;
   setMobileMenu: React.Dispatch<React.SetStateAction<boolean>>;
-  showContactMenu: boolean;
-  setShowContactMenu: React.Dispatch<React.SetStateAction<boolean>>;
-  subMenuData: SubMenuItem[] | null; // Allow it to be an array or null
+  treatments: Treatment[];
+  diseases: Disease[];
 }
 
 interface Treatment {
@@ -34,62 +31,11 @@ interface Disease {
 }
 
 const MenuMobile: React.FC<MenuMobileProps> = ({
-  showCatMenu,
-  setShowCatMenu,
   setMobileMenu,
-  showContactMenu,
-  setShowContactMenu,
-  subMenuData,
+  treatments,
+  diseases,
 }) => {
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
-  const [treatments, setTreatments] = useState<Treatment[]>([]); // State for treatments data
-  const [diseases, setDiseases] = useState<Disease[]>([]); // State for diseases data
-
-  // Fetch the treatments data from the API
-  useEffect(() => {
-    const fetchTreatments = async () => {
-      try {
-        const response = await fetch(
-          `${process.env.BACKEND}/getAllTreatments?per_page=1000`
-        );
-        const data = await response.json();
-
-        // Ensure we get an array of treatments
-        if (data?.treatments && Array.isArray(data.treatments)) {
-          setTreatments(data.treatments);
-        } else {
-          console.error("Unexpected data format:", data);
-        }
-      } catch (error) {
-        console.error("Error fetching treatments:", error);
-      }
-    };
-
-    fetchTreatments();
-  }, []);
-
-  // Fetch the diseases data from the API
-  useEffect(() => {
-    const fetchDiseases = async () => {
-      try {
-        const response = await fetch(
-          `${process.env.BACKEND}/diseases?per_page=1000`
-        );
-        const data = await response.json();
-
-        // Ensure we get an array of diseases
-        if (data?.diseases && Array.isArray(data?.diseases)) {
-          setDiseases(data?.diseases);
-        } else {
-          console.error("Unexpected data format:", data);
-        }
-      } catch (error) {
-        console.error("Error fetching diseases:", error);
-      }
-    };
-
-    fetchDiseases();
-  }, []);
 
   const menuItems = [
     {
@@ -223,7 +169,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
         ))}
 
         {/* Render subMenuData if it's not null */}
-        {subMenuData && subMenuData.length > 0 && (
+        {/* {subMenuData && subMenuData.length > 0 && (
           <div className="pt-2">
             <h3 className="px-5 text-md font-semibold">Sub Menu</h3>
 
@@ -237,7 +183,7 @@ const MenuMobile: React.FC<MenuMobileProps> = ({
               </li>
             ))}
           </div>
-        )}
+        )} */}
       </ul>
     </div>
   );

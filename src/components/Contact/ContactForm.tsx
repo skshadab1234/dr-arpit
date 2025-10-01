@@ -48,32 +48,32 @@ const ContactForm: React.FC = () => {
           icon: "success",
         });
 
-        try {
-          const response = await fetch(
-            "https://rubyeng.demo-web.live/wp-json/contact_form/v1/submit",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                name: name || "",
-                email: email || "",
-                contact: `${phone || ""}`,
-                message: message || "",
-              }),
-            }
-          );
+        // try {
+        //   const response = await fetch(
+        //     "https://rubyeng.demo-web.live/wp-json/contact_form/v1/submit",
+        //     {
+        //       method: "POST",
+        //       headers: {
+        //         "Content-Type": "application/json",
+        //       },
+        //       body: JSON.stringify({
+        //         name: name || "",
+        //         email: email || "",
+        //         contact: `${phone || ""}`,
+        //         message: message || "",
+        //       }),
+        //     }
+        //   );
 
-          if (!response.ok) {
-            setSubmitting(false);
-            throw new Error("Network response was not ok");
-          }
+        //   if (!response.ok) {
+        //     setSubmitting(false);
+        //     throw new Error("Network response was not ok");
+        //   }
 
-          const responseData = await response.json();
-        } catch (error) {
-          console.error("There was a problem with the fetch operation:", error);
-        }
+        //   const responseData = await response.json();
+        // } catch (error) {
+        //   console.error("There was a problem with the fetch operation:", error);
+        // }
       } else {
         // Set submitting to false and notify failure
         setSubmitting(false);
@@ -96,7 +96,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <>
-      <div className="relative p-3  border-primary rounded-lg shadow-lg dark:bg-dark-2 sm:p-10">
+      <div className="relative border-primary rounded-lg shadow-lg dark:bg-dark-2 sm:p-5">
         <form onSubmit={handleContactSubmit}>
           <div className="mb-6">
             <input

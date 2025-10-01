@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, MapPin, PhoneCall, MailIcon } from "lucide-react";
 import logo from "@/assets/arpitlogo.png";
 import { LuClock } from "react-icons/lu";
@@ -47,7 +48,13 @@ const Footer = ({ treatments }: { treatments: Treatment[] }) => {
         <div className="grid grid-cols-1 gap-8 xl:grid-cols-3">
           {/* About Section */}
           <div>
-            <img className="w-60" src={logo.src} alt="Dr Arpit Bansal" />
+            <Image
+              src={logo.src}
+              alt="Dr Arpit Bansal"
+              width={240}
+              height={74}
+              priority={false}
+            />
 
             <p className="mt-5 text-base font-medium text-justify text-[#000]">
               Dr. Arpit Bansal, an Advanced Laparoscopy and Cancer Specialist

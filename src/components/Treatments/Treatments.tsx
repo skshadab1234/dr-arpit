@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 // Array of treatments post data
 // const treatmentsPosts = [
@@ -66,11 +67,15 @@ const TreatmentsPost = ({ post, loading }: any) => {
       ) : (
         <div className="relative overflow-hidden rounded-lg animate-fade-in-right">
           <a href={`/treatments/${post.slug}`} title={post.title} aria-label={post.title}>
-            <img
-              src={post.image}
-              alt={post.title}
-              className="w-full h-64 object-cover shadow-lg"
-            />
+            <div className="relative w-full h-64 shadow-lg">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              />
+            </div>
           </a>
           <div className="p-6 relative -top-16 bg-white w-80 m-auto shadow-lg ">
             <h3 className="text-xl font-bold mb-4">

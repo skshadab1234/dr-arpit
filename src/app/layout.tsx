@@ -8,6 +8,7 @@ import Footer from "@/components/Layout/Footer";
 import FloatingAppointment from "@/components/Layout/FloatingAppointment";
 import FloatingButton from "@/components/Layout/FloatingButton";
 import ScreenTop from "@/components/Layout/ScreenTop";
+import NextTopLoader from 'nextjs-toploader';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -69,6 +70,7 @@ export default async function RootLayout({
         </Script>
       </head>
       <body className={inter.className}>
+        <NextTopLoader color="#fff" />
         <Announcement />
         <NewHeader treatments={treatments} diseases={diseases} />
         <ScreenTop />

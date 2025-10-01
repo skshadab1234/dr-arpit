@@ -20,6 +20,7 @@ import banner10 from "@/assets/images/10-min.webp";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import Link from "next/link";
+import Image from "next/image";
 
 const slidesData = [
   {
@@ -94,14 +95,16 @@ const Slider: React.FC = () => {
             <Link href={slide.url}>
               <div
                 ref={(el: any) => (slideRefs.current[index] = el)}
-                className="relative w-full h-auto flex items-center justify-left banner-animate"
+                className="relative w-full aspect-[1600/711] banner-animate"
               >
-                <img
+                <Image
                   src={slide.backgroundImage}
-                  alt={slide.backgroundImage}
+                  alt={slide.description || "Banner"}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                  priority={index === 0}
                   fetchPriority={index === 0 ? "high" : "auto"}
-                  loading={index === 0 ? "eager" : "lazy"}
-                  decoding="async"
                 />
                 {/* Overlay parts */}
                 <div className="overlay-top-part overlay-part"></div>

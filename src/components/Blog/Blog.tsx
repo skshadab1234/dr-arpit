@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import "animate.css";
+import Link from "next/link";
 
 interface BlogPost {
   ID: number;
@@ -16,39 +18,61 @@ interface BlogProps {
 }
 
 const BlogPostComponent = ({ post }: { post: BlogPost }) => (
-  <div className="duration-1000 animate__animated animate__fadeInRight">
-    <div className="rounded-xl shadow-md" style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}>
-      <div className="relative overflow-hidden bg-white rounded-lg shadow-lg">
-        <a href={`/patients-education/${post.slug}`} title={post.title} aria-label={post.title}>
-          <img src={post.image} alt={post.title} className="w-full h-64 object-cover" />
-        </a>
+  <article
+    className="flex flex-col bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 group"
+    itemScope
+    itemType="https://schema.org/BlogPosting"
+  >
+    {/* Image */}
+    <Link href={`/patients-education/${post.slug}`} aria-label={post.title}>
+      <div className="relative w-full h-56 overflow-hidden">
+        <Image
+          src={post.image}
+          alt={post.title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          itemProp="image"
+        />
       </div>
-      <div className="p-6">
-        <h3 className="text-2xl font-bold mb-4 line-clamp-1">
-          <a
-            href={`/patients-education/${post.slug}`}
-            className="text-[#232c77] hover:text-black inline-block min-h-[44px] px-3 py-2 rounded-md"
-          >
-            {post.title}
-          </a>
-        </h3>
-        {post.description && (
-          <p className="mb-4 line-clamp-3 text-justify text-black" dangerouslySetInnerHTML={{ __html: post.description }} />
-        )}
-        <a
-          href={`/patients-education/${post.slug}`}
-          className="inline-flex items-center justify-center text-[#232c77] hover:text-blue-700 font-semibold min-h-[44px] px-4 py-2 rounded-md"
-          aria-label={`Read more about ${post.title}`}
+    </Link>
+
+    {/* Content */}
+    <div className="flex flex-col flex-1 p-6">
+      <header className="mb-3">
+        <h2
+          className="text-lg font-semibold text-gray-900 line-clamp-2 group-hover:text-[#232c77] transition-colors"
+          itemProp="headline"
         >
-          Read more: {post.title}
-        </a>
-      </div>
+          <Link href={`/patients-education/${post.slug}`}>
+            {post.title}
+          </Link>
+        </h2>
+      </header>
+
+      <p
+        className="text-sm text-gray-600 line-clamp-3 flex-1 mb-4"
+        dangerouslySetInnerHTML={{ __html: post.description || "" }}
+        itemProp="description"
+      />
+
+      {/* CTA always aligned bottom */}
+      <footer className="mt-auto">
+        <Link
+          href={`/patients-education/${post.slug}`}
+          className="inline-flex items-center text-[#232c77] font-medium hover:text-blue-700 transition-colors"
+          aria-label={`Read more about ${post.title}`}
+          itemProp="url"
+        >
+          Read More →
+        </Link>
+      </footer>
     </div>
-  </div>
+  </article>
 );
 
+
 const Blog = ({ title, allDiseases }: BlogProps) => {
-  const bg = "./white bg.png";
   const itemsPerPage = 6;
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -97,33 +121,46 @@ const Blog = ({ title, allDiseases }: BlogProps) => {
   const data = title === "home" ? allDiseases.diseases.slice(0, 3) : blogPosts;
 
   return (
-    <div style={{ backgroundImage: `url('${bg}')`, backgroundSize: "cover", backgroundPosition: "center" }} className={title === "home" ? "bg-white" : ""}>
+    <div className={title === "home" ? "bg-white" : "bg-white"}>
       <div className={`container mx-auto px-4 ${title === "home" ? "py-10 pt-10" : "py-16"}`}>
         <h5 style={{ letterSpacing: "3px" }} className="text-[#232c77] text-center pb-5 font-bold uppercase text-4xl lg:text-6xl">
           Patients Education
         </h5>
 
-        <div className="flex flex-wrap -mx-4">
-          {loading
-            ? Array.from({ length: title === "home" ? 3 : itemsPerPage }).map((_, index) => (
-              <div key={index} className="w-full md:w-1/2 lg:w-1/3 p-4">
-                <div className="rounded-xl bg-gray-200 animate-pulse">
-                  <div className="relative overflow-hidden bg-gray-300 h-64 rounded-lg"></div>
-                  <div className="p-6">
-                    <div className="h-6 bg-gray-300 rounded mb-4"></div>
-                    <div className="h-4 bg-gray-300 rounded mb-2"></div>
-                    <div className="h-4 bg-gray-300 rounded mb-2"></div>
-                    <div className="h-4 bg-gray-300 rounded"></div>
-                  </div>
+
+        {loading
+          ?
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {Array.from({ length: title === "home" ? 3 : itemsPerPage }).map((_, index) => (
+              <div
+                key={index}
+                className="flex flex-col bg-white rounded-2xl shadow-md overflow-hidden "
+              >
+                {/* Image Skeleton */}
+                <div className="relative w-full h-56 bg-gray-300" />
+
+                {/* Content Skeleton */}
+                <div className="flex flex-col flex-1 p-6">
+                  <div className="h-6 bg-gray-300 rounded mb-4 w-3/4" />
+                  <div className="h-4 bg-gray-300 rounded mb-2 w-full" />
+                  <div className="h-4 bg-gray-300 rounded mb-2 w-5/6" />
+                  <div className="h-4 bg-gray-300 rounded w-2/3" />
+
+                  {/* CTA Placeholder (aligned bottom) */}
+                  <div className=" h-5 w-24 bg-gray-300 rounded mt-2" />
                 </div>
               </div>
-            ))
-            : data.map((post, index) => (
+            ))}
+          </div>
+          :
+          <div className="flex flex-wrap -mx-4">
+            {data.map((post, index) => (
               <div key={post.ID} className="w-full md:w-1/2 lg:w-1/3 p-4" data-id={index}>
                 <BlogPostComponent post={post} />
               </div>
             ))}
-        </div>
+          </div>
+        }
 
         {title === "home" && !loading && (
           <div className="flex justify-center mt-8">
@@ -155,7 +192,7 @@ const Blog = ({ title, allDiseases }: BlogProps) => {
           </div>
         )}
       </div>
-    </div>
+    </div >
   );
 };
 

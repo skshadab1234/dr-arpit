@@ -68,6 +68,8 @@ const Footer = ({ treatments }: { treatments: Treatment[] }) => {
                 className="rounded-lg border-4 border-solid"
                 style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}
                 loading="lazy"
+                title="Map showing location of Dr. Arpit Bansal's clinic in Prayagraj"
+                aria-label="Google Map showing the clinic location of Dr. Arpit Bansal in Prayagraj"
               ></iframe>
             </div>
           </div>

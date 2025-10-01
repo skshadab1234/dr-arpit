@@ -39,10 +39,8 @@ function extractJsonLd(schema: string): string[] {
   });
 }
 
-const BlogSingle = ({ params, BlogData }: any) => {
+const BlogSingle = ({ params, blog }: any) => {
   const bg = "./white bg.png";
-  const [blog, setBlog] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [videoSrc, setVideoSrc] = useState(""); // Initialize with an empty string for videoSrc
 
@@ -56,49 +54,10 @@ const BlogSingle = ({ params, BlogData }: any) => {
     setVideoSrc(""); // Clear the video link on modal close
   };
 
-  useEffect(() => {
-    fetch(`${process.env.BACKEND}/disease/${params}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setBlog(data);
-        BlogData(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching blog:", error);
-        setLoading(false);
-      });
-  }, [params]);
 
-  if (loading) {
-    return <BlogSingleSkeleton />;
-  }
-  const jsonLdArray = extractJsonLd(blog.schema);
   return (
     <>
       {" "}
-      <head>
-        <title>{blog.meta_title || "Default Page Title"}</title>
-        <meta
-          name="description"
-          content={blog.meta_description || "Default description for the page."}
-        />
-        <meta
-          name="keywords"
-          content={blog.meta_keyword || "default, keywords, here"}
-        />
-        <link
-          rel="canonical"
-          href={`https://drarpitbansal.in/patients-education/${blog.slug}`}
-        />
-        {jsonLdArray.map((json, index) => (
-          <script
-            key={index}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: json }}
-          />
-        ))}
-      </head>
       <div
         style={{
           backgroundImage: `url('${bg}')`,

@@ -51,16 +51,18 @@ export const metadata: Metadata = {
   },
 };
 
-const getAllTestimonial = async () => {
-  const response = await fetch(`${process.env.BACKEND}/testimonial?_fields=id,title,meta,slug&per_page=100`);
-  const data = await response.json();
-  return data;
-};
+async function getAllTestimonial() {
+  const res = await fetch(`${process.env.BACKEND}/latestTestimonials?per_page=10`, {
+    next: { revalidate: 60 }, // ISR: revalidate every 60s
+  });
+
+  if (!res.ok) throw new Error("Failed to fetch testimonial data");
+
+  return res.json();
+}
 
 const schedule = async () => {
   const allTestimonial = await getAllTestimonial()
-  console.log(allTestimonial)
-  //
   return (
     <>
       <BreadCrumb
@@ -69,7 +71,7 @@ const schedule = async () => {
         img={abouts.src}
         version={false}
       />
-      <TestimonialComp />
+      <TestimonialComp allTestimonial={allTestimonial} />
     </>
   );
 };

@@ -1,42 +1,43 @@
 "use client";
-import portfolioData from "@/data/portfolioData";
 import { Modal } from "antd";
-import Link from "next/link";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { IoPlayCircleSharp } from "react-icons/io5";
 
 interface testimonialData {
   id: number;
-  meta: { image: string; url: string };
+  image: string;
+  url: string;
 }
 
-const TestimonialComp = () => {
+const TestimonialComp = ({ allTestimonial }: { allTestimonial: testimonialData[] }) => {
   const bg = "./white bg.png";
   const [testimonialData, setTestimonialData] = useState<testimonialData[]>([]);
   const [expandedTestimonial, setExpandedTestimonial] = useState<number | null>(
     null
   );
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          `${process.env.BACKEND2}/testimonial?_fields=id,title,meta,slug&per_page=100`
-        );
-        if (response.ok) {
-          const testimonialData: testimonialData[] = await response.json();
-          setTestimonialData(testimonialData);
-        }
-      } catch (error) {
-        console.error("Internal Server Error", error);
-      }
-    };
-    fetchData();
-  }, []);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         `${process.env.BACKEND}/latestTestimonials?per_page=100`
+  //       );
+  //       if (response.ok) {
+  //         const testimonialData: testimonialData[] = await response.json();
+  //         setTestimonialData(testimonialData);
+  //       }
+  //     } catch (error) {
+  //       console.error("Internal Server Error", error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   const handleLoadMore = (id: number) => {
     setExpandedTestimonial(expandedTestimonial === id ? null : id);
   };
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -66,16 +67,17 @@ const TestimonialComp = () => {
           </h5>
         </div>
         <div className="lg:flex flex-wrap px-4 lg:px-10">
-          {testimonialData.map((items) => (
-            <div className="md:w-1/2 lg:w-1/3 xl:w-1/4 w-full " key={items.id}>
+          {allTestimonial.map((item) => (
+            <div className="md:w-1/2 lg:w-1/3 xl:w-1/4 w-full " key={item.id}>
               <div className="px-5">
                 <div className="relative">
-                  <img
+                  <Image
                     className="mb-5"
-                    width={"100%"}
-                    height={"300px"}
-                    src={items.meta.image}
-                    alt={items.meta.url}
+                    width={300}
+                    height={300}
+                    layout="responsive"
+                    src={item.image}
+                    alt={item.url}
                   />
                   <h4 className="text-white cursor-pointer text-xl font-semibold text-center py-2 absolute top-0 w-full h-full flex items-center justify-center bg-[#00000066]">
                     <IoPlayCircleSharp
@@ -92,11 +94,11 @@ const TestimonialComp = () => {
                     width={700}
                     footer={null} // Remove footer
                   >
-                    {items.meta.url ? (
+                    {item.url ? (
                       <iframe
                         width="100%"
                         height="400"
-                        src={items.meta.url}
+                        src={item.url}
                         title="What our Patients say"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen

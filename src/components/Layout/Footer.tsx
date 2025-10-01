@@ -241,7 +241,7 @@ const Footer = ({ treatments }: { treatments: Treatment[] }) => {
                       color="#00008b"
                     />
                   </div>
-                  <a>11am to 5pm at JJH (Monday to Saturday)</a>
+                  <time dateTime="11:00-17:00">11am to 5pm at JJH (Monday to Saturday)</time>
                 </div>
 
                 <div className="flex items-start gap-2">
@@ -252,9 +252,9 @@ const Footer = ({ treatments }: { treatments: Treatment[] }) => {
                       color="#00008b"
                     />
                   </div>
-                  <a>
+                  <time dateTime="18:00-20:00">
                     6pm to 8pm at Gut and Longevity Clinic (Monday to Saturday)
-                  </a>
+                  </time>
                 </div>
               </div>
             </div>

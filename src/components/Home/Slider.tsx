@@ -96,7 +96,13 @@ const Slider: React.FC = () => {
                 ref={(el: any) => (slideRefs.current[index] = el)}
                 className="relative w-full h-auto flex items-center justify-left banner-animate"
               >
-                <img src={slide.backgroundImage} alt={slide.backgroundImage} />
+                <img
+                  src={slide.backgroundImage}
+                  alt={slide.backgroundImage}
+                  fetchPriority={index === 0 ? "high" : "auto"}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  decoding="async"
+                />
                 {/* Overlay parts */}
                 <div className="overlay-top-part overlay-part"></div>
                 <div className="overlay-bottom-part overlay-part"></div>

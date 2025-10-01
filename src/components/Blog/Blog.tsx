@@ -19,18 +19,29 @@ const BlogPostComponent = ({ post }: { post: BlogPost }) => (
   <div className="duration-1000 animate__animated animate__fadeInRight">
     <div className="rounded-xl shadow-md" style={{ boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}>
       <div className="relative overflow-hidden bg-white rounded-lg shadow-lg">
-        <a href={`/patients-education/${post.slug}`} title={post.title}>
+        <a href={`/patients-education/${post.slug}`} title={post.title} aria-label={post.title}>
           <img src={post.image} alt={post.title} className="w-full h-64 object-cover" />
         </a>
       </div>
       <div className="p-6">
         <h3 className="text-2xl font-bold mb-4 line-clamp-1">
-          <a href={`/patients-education/${post.slug}`} className="text-[#232c77] hover:text-black">{post.title}</a>
+          <a
+            href={`/patients-education/${post.slug}`}
+            className="text-[#232c77] hover:text-black inline-block min-h-[44px] px-3 py-2 rounded-md"
+          >
+            {post.title}
+          </a>
         </h3>
         {post.description && (
           <p className="mb-4 line-clamp-3 text-justify text-black" dangerouslySetInnerHTML={{ __html: post.description }} />
         )}
-        <a href={`/patients-education/${post.slug}`} className="text-[#232c77] hover:text-blue-700 font-semibold">Read More</a>
+        <a
+          href={`/patients-education/${post.slug}`}
+          className="inline-flex items-center justify-center text-[#232c77] hover:text-blue-700 font-semibold min-h-[44px] px-4 py-2 rounded-md"
+          aria-label={`Read more about ${post.title}`}
+        >
+          Read more: {post.title}
+        </a>
       </div>
     </div>
   </div>

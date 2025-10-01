@@ -65,10 +65,10 @@ const TreatmentsPost = ({ post, loading }: any) => {
         </div>
       ) : (
         <div className="relative overflow-hidden rounded-lg animate-fade-in-right">
-          <a href={`/treatments/${post.slug}`} title={post.title}>
+          <a href={`/treatments/${post.slug}`} title={post.title} aria-label={post.title}>
             <img
               src={post.image}
-              alt="treatments"
+              alt={post.title}
               className="w-full h-64 object-cover shadow-lg"
             />
           </a>
@@ -77,7 +77,7 @@ const TreatmentsPost = ({ post, loading }: any) => {
               <a
                 href={`/treatments/${post.slug}`}
                 title={post.title}
-                className="text-gray-800 hover:text-gray-600 line-clamp-2 h-14"
+                className="text-gray-800 hover:text-gray-600 line-clamp-2 h-14 inline-block min-h-[44px] px-3 py-2 rounded-md"
               >
                 {post.title}
               </a>
@@ -89,10 +89,11 @@ const TreatmentsPost = ({ post, loading }: any) => {
             ></p>
             <a
               href={`/treatments/${post.slug}`}
-              title="Read More"
-              className="text-blue-500 hover:text-blue-700 font-semibold"
+              title={`Read more about ${post.title}`}
+              className="inline-flex items-center justify-center text-blue-500 hover:text-blue-700 font-semibold min-h-[44px] px-4 py-2 rounded-md"
+              aria-label={`Read more about ${post.title}`}
             >
-              Read More
+              Read more: {post.title}
             </a>
           </div>
         </div>

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
   // SEO meta tags
   authors: [
-    { name: "Dr. Arpit Bansal"},
+    { name: "Dr. Arpit Bansal" },
   ],
   robots: "index, follow", // To allow search engine crawling and indexing
   publisher: "Dr. Arpit Bansal",
@@ -49,7 +49,18 @@ export const metadata: Metadata = {
     images: [metaImage.src],
   },
 };
-const patientsEducation = () => {
+
+async function getAllDiseases() {
+  const res = await fetch(`${process.env.BACKEND}/diseases?per_page=6&page=1`, {
+    cache: "force-cache",
+    // Cached until next build or revalidate manually
+  });
+
+  if (!res.ok) throw new Error("Failed to fetch diseases");
+  return res.json();
+}
+const patientsEducation = async () => {
+  const allDiseases = await getAllDiseases();
   return (
     <div>
       <BreadCrumb
@@ -58,7 +69,7 @@ const patientsEducation = () => {
         img={abouts.src}
         version={false}
       />
-      <Blog title="blog" />
+      <Blog title="blog" allDiseases={allDiseases} />
       <RequestAppointment />
     </div>
   );

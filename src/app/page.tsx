@@ -150,24 +150,40 @@ export const metadata: Metadata = {
   },
 };
 
-const getDiseases = async () => {
-  const res = await fetch(`${process.env.BACKEND}/diseases`);
-  const data = await res.json();
-  return data;
-};
+async function getAllTreatments() {
+  const res = await fetch(`${process.env.BACKEND}/getAllTreatments`, {
+    cache: "force-cache",
+    // Cached until next build or revalidate manually
+  });
+
+  if (!res.ok) throw new Error("Failed to fetch treatments");
+  return res.json();
+}
+
+async function getAllDiseases() {
+  const res = await fetch(`${process.env.BACKEND}/diseases?per_page=6&page=1`, {
+    cache: "force-cache",
+    // Cached until next build or revalidate manually
+  });
+
+  if (!res.ok) throw new Error("Failed to fetch diseases");
+  return res.json();
+}
 
 export default async function Home() {
+  // console.log(process.env.BACKEND, "fdsfdsfdsf");
 
-  const diseases = await getDiseases()
-  console.log(diseases)
+  const allTreatments = await getAllTreatments();
+  const allDiseases = await getAllDiseases();
+
   return (
     <>
       <JsonLdScripts />
 
       <Slider />
       <AboutHome />
-      <SpecialityComp />
-      <Blog title="home" />
+      <SpecialityComp allTreatments={allTreatments?.treatments || []} />
+      <Blog title="home" allDiseases={allDiseases || []} />
       <Features />
       <InstaFeed />
       {/* <GoogleFeed /> */}

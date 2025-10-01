@@ -52,6 +52,7 @@ export default async function RootLayout({
     getDiseases(),
   ]);
 
+  console.log(diseases, 'diseases')
 
   return (
     <html lang="en">

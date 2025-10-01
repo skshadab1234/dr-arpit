@@ -149,8 +149,17 @@ export const metadata: Metadata = {
     images: [metaImage.src],
   },
 };
-export default function Home() {
-  // console.log(process.env.BACKEND, "fdsfdsfdsf");
+
+const getDiseases = async () => {
+  const res = await fetch(`${process.env.BACKEND}/diseases`);
+  const data = await res.json();
+  return data;
+};
+
+export default async function Home() {
+
+  const diseases = await getDiseases()
+  console.log(diseases)
   return (
     <>
       <JsonLdScripts />

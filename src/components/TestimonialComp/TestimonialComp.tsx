@@ -38,6 +38,7 @@ const TestimonialComp = ({ allTestimonial }: { allTestimonial: testimonialData[]
     setExpandedTestimonial(expandedTestimonial === id ? null : id);
   };
 
+  //
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
